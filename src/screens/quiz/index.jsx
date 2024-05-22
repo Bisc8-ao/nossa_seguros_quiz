@@ -11,7 +11,6 @@ function Quiz() {
 
   return (
     <div className="_qz_wrapper">
-      <div className="_qz_timer"></div>
       <div className="_qz_container">
         <Trivia
           data={questions}
