@@ -6,13 +6,15 @@ function Trivia(props) {
 
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [className, setClassName] = useState("_tr_answer")
 
   useEffect(() => {
     setQuestion(data[questionNumer - 1]);
   }, [data, questionNumer]);
 
-  function handleClick() {
-
+  function handleClick(answer) {
+    setSelectedAnswer(answer);
+    setClassName("_tr_answer active")
   }
 
   return (
@@ -22,7 +24,11 @@ function Trivia(props) {
       </div>
       <div className="_tr_answers_container">
         {question?.answers.map((answer, index) => (
-          <div className="_tr_answer" key={index} onClick={() => handleClick(answer)}>
+          <div
+            className={ selectedAnswer === answer ? className : "_tr_answer"}
+            key={index}
+            onClick={() => handleClick(answer)}
+          >
             <p>{answer.text}</p>
           </div>
         ))}
