@@ -1,23 +1,30 @@
-import { useState, useEffect } from "react";
-import styled from "styled-components";
 import "./main.scss";
 
-function Trivia(props) {
-  const Timer = styled.div`
-    width: 100%;
-    height: 30px;
-    background-color: red;
-  `;
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-  const { data, setStop, questionNumer, setQuestionNumber } = props;
+import Levels from "../levels";
+import styled from "styled-components";
+
+import { levels } from "../../data/levels";
+
+const Timer = styled.div`
+  width: 100%;
+  height: 30px;
+  background-color: red;
+`;
+
+function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
+  const navigate = useNavigate();
 
   const [question, setQuestion] = useState(null);
+  const [showLevel, setShowLevel] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [className, setClassName] = useState("_tr_answer");
 
   useEffect(() => {
-    setQuestion(data[questionNumer - 1]);
-  }, [data, questionNumer]);
+    setQuestion(data[questionNumber - 1]);
+  }, [data, questionNumber]);
 
   const delay = (duration, callback) => {
     setTimeout(() => {
@@ -38,30 +45,42 @@ function Trivia(props) {
     delay(6000, () => {
       if (answer.correct) {
         setQuestionNumber((prev) => prev + 1);
-        setSelectedAnswer(null)
+        setSelectedAnswer(null);
+        setShowLevel(true);
+
+        delay(2000, () => {
+          setShowLevel(false);
+        });
       } else {
-        setStop(true)
+        setSelectedAnswer(null);
+        navigate("/lose");
+        setStop(true);
       }
     });
   }
 
   return (
     <div>
-      <Timer />
-      <div className="_tr_display_container">
-        <span className="_tr_question">{question?.question}</span>
-      </div>
-      <div className="_tr_answers_container">
-        {question?.answers.map((answer, index) => (
-          <div
-            className={selectedAnswer === answer ? className : "_tr_answer"}
-            key={index}
-            onClick={() => handleClick(answer)}
-          >
-            <p>{answer.text}</p>
+      {showLevel ? (
+        <Levels data={levels} questionNumber={questionNumber} />
+      ) : (
+        <>
+          <div className="_tr_display_container">
+            <span className="_tr_question">{question?.question}</span>
           </div>
-        ))}
-      </div>
+          <div className="_tr_answers_container">
+            {question?.answers.map((answer, index) => (
+              <div
+                className={selectedAnswer === answer ? className : "_tr_answer"}
+                key={index}
+                onClick={() => handleClick(answer)}
+              >
+                <p>{answer.text}</p>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }

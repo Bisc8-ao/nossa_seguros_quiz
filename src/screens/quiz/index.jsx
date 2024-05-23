@@ -1,14 +1,12 @@
 import "./main.scss";
 import { useState } from "react";
-
 import { questions } from "../../data/questions";
 
 import Trivia from "../../components/trivia";
 
 function Quiz() {
-  const [questionNumer, setQuestionNumber] = useState(1);
+  const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
-  const [level, setLevel] = useState(1)
 
   return (
     <div className="_qz_wrapper">
@@ -16,7 +14,7 @@ function Quiz() {
         <Trivia
           data={questions}
           setStop={setStop}
-          questionNumer={questionNumer }
+          questionNumber={questionNumber }
           setQuestionNumber={setQuestionNumber}
         />
       </div>
