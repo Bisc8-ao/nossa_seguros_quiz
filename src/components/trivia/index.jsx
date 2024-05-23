@@ -15,11 +15,14 @@ const Timer = styled.div`
 `;
 
 function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
+  
   const navigate = useNavigate();
 
   const [question, setQuestion] = useState(null);
-  const [showLevel, setShowLevel] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
+
+  const [showLevel, setShowLevel] = useState(false);
+
   const [className, setClassName] = useState("_tr_answer");
 
   useEffect(() => {

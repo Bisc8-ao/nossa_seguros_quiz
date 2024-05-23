@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
-import logo from '../../assets/images/NOSSA.png'
+import logo from "../../assets/images/NOSSA.png";
 
 import "./main.scss";
 
@@ -10,14 +11,30 @@ function Home() {
   return (
     <div className="_hm_wrapper">
       <div className="_hm_container">
-        <img src={logo} alt="" width="300"/>
+        <img src={logo} alt="" width="300" />
         <span>Vamos Jogar?</span>
 
         <div className="_hm_btn_containers">
-          <button className="_hm_start_game" onClick={() => navigate("/quiz")}>Jogar</button>
-          <button className="_hm_cancel_game" onClick={() => navigate("/")}>
+          <motion.button
+            whileTap={{ scale: 0.85 }}
+            className="_hm_start_game"
+            onClick={() => {
+              setTimeout(() => {
+                navigate("/quiz");
+              }, 500);
+            }}
+          >
+            Jogar
+          </motion.button>
+          <motion.button whileTap={{ scale: 0.85 }}
+            className="_hm_cancel_game"
+            onClick={() => {
+              setTimeout(() => {
+                navigate("/");
+              }, 500);
+            }}>
             Cancelar
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>
