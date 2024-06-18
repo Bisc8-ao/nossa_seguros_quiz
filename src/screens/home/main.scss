@@ -1,15 +1,16 @@
 ._hm_wrapper {
   min-height: 100vh;
-  padding: 30rem 10rem;
+  padding: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #020230, rgba(0, 0, 0, 0)), url("../../assets//images/bg.jpg") center no-repeat;
+  background: linear-gradient(to bottom, #020230, rgba(0, 0, 0, 0)),
+    url("../../assets//images/bg.jpg") center no-repeat;
   background-size: cover;
 
   span {
     color: #fff;
-    font-size: 6rem;
+    font-size: 1.6rem;
     text-align: center;
     display: block;
   }
@@ -17,34 +18,93 @@
 
 ._hm_container {
   width: 100%;
-  margin-top: -300px;
   display: inherit;
   flex-direction: column;
-  gap: 10rem;
+  gap: 3rem;
 
   img {
-    display: inline-block;
-    align-self: center;
+    width: 8rem;
+    height: 8rem;
+    margin: auto;
   }
 }
 
 ._hm_btn_containers {
-  margin-top: 3rem;
-
   display: inherit;
   flex-direction: inherit;
-  gap: 5rem;
+  gap: 1rem;
 
   button {
-    font-size: 3rem;
+    font-size: 1.2rem;
     font-size: bold;
 
     width: 100%;
-    padding: 1.5rem;
+    padding: 0.6rem;
 
     border-radius: 5rem;
   }
 }
 
-._hm_start_game {
+@media (min-width: 375px) and (max-width: 430px) {
+  ._hm_container span {
+    font-size: 3rem;
+  }
+
+  ._hm_container img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  ._hm_btn_containers button {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  ._hm_container span {
+    font-size: 3rem;
+  }
+
+  ._hm_container {
+    margin-bottom: 5rem;
+    img {
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+
+  ._hm_btn_containers {
+    align-items: center;
+
+    button {
+      font-size: 2.2rem;
+      width: 80%;
+    }
+  }
+}
+
+
+@media (min-width: 1440px) and (max-width: 2560px){
+
+  ._hm_container span {
+    font-size: 3rem;
+  }
+
+  ._hm_container {
+    margin-bottom: 5rem;
+    img {
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+
+  ._hm_btn_containers {
+    align-items: center;
+
+    button {
+      font-size: 2.2rem;
+      width: 80%;
+    }
+  }
 }

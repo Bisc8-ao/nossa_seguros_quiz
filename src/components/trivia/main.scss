@@ -1,32 +1,30 @@
 ._tr_display_container {
   width: 100%;
-  padding: 200px 100px;
+  padding: 2rem;
   border-top: 5px solid green;
   border-bottom: 5px solid green;
-
-  margin-top: 200px;
 
   ._tr_question {
     color: #fff;
     text-align: center;
-    font-size: 3.2rem;
+    font-size: 1.5rem;
     display: flex;
     justify-content: center;
   }
 }
 
 ._tr_answers_container {
-  padding: 150px 100px;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 ._tr_answer {
-  padding: 3rem 2.5rem;
-  font-size: 2.6rem;
+  padding: 1rem;
+  font-size: 1.2rem;
   color: #fff;
-  border-radius: 3rem;
+  border-radius: 1rem;
   border: 5px solid green;
   background: linear-gradient(#0e0124, #22074d);
   cursor: pointer;

@@ -11,7 +11,7 @@ function Home() {
   return (
     <div className="_hm_wrapper">
       <div className="_hm_container">
-        <img src={logo} alt="" width="300" />
+        <img src={logo} alt="" />
         <span>Vamos Jogar?</span>
 
         <div className="_hm_btn_containers">
@@ -26,13 +26,15 @@ function Home() {
           >
             Jogar
           </motion.button>
-          <motion.button whileTap={{ scale: 0.85 }}
+          <motion.button
+            whileTap={{ scale: 0.85 }}
             className="_hm_cancel_game"
             onClick={() => {
               setTimeout(() => {
                 navigate("/");
               }, 500);
-            }}>
+            }}
+          >
             Cancelar
           </motion.button>
         </div>
