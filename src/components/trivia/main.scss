@@ -1,28 +1,28 @@
 ._tr_display_container {
   width: 100%;
-  padding: 2rem;
-  border-top: 5px solid green;
-  border-bottom: 5px solid green;
+  padding: $pd-xxl;
+  border-top: .8rem solid $yellow-green;
+  border-bottom: .8rem solid $yellow-green;
 
   ._tr_question {
-    color: #fff;
+    color: $white;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: $font-title-m;
     display: flex;
     justify-content: center;
   }
 }
 
 ._tr_answers_container {
-  padding: 1rem;
+  padding: $mg-x;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: $m-m;
 }
 
 ._tr_answer {
-  padding: 1rem;
-  font-size: 1.2rem;
+  padding: $p-s;
+  font-size: $font-btn-xxl;
   color: #fff;
   border-radius: 1rem;
   border: 5px solid green;

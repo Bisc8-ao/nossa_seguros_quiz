@@ -7,6 +7,7 @@ import logo from "../../assets/images/NOSSA.png";
 
 export default function Splash() {
   const navigate = useNavigate();
+  const rand = Math.floor(Math.random() * (3 + 1));
 
   useEffect(() => {
     setTimeout(() => {

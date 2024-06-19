@@ -4,13 +4,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #020230, rgba(0, 0, 0, 0)),
-    url("../../assets//images/bg.jpg") center no-repeat;
+  // background: linear-gradient(to bottom, #020230, rgba(0, 0, 0, 0)),
+  //   url("../../assets//images/bg.jpg") center no-repeat;
   background-size: cover;
 
   span {
     color: #fff;
-    font-size: 1.6rem;
+    font-size: $font-title-s;
     text-align: center;
     display: block;
   }
@@ -23,44 +23,58 @@
   gap: 3rem;
 
   img {
-    width: 8rem;
-    height: 8rem;
+    width: $logo-extra-small;
+    height: $logo-extra-small;
     margin: auto;
   }
 }
 
 ._hm_btn_containers {
+
   display: inherit;
-  flex-direction: inherit;
-  gap: 1rem;
+  justify-content: center;
+  margin-top: $m-m;
+  
+  ._hm_start_game {
+    font-size: $font-btn-xxl;
+    font-weight: $font-bold;
 
-  button {
-    font-size: 1.2rem;
-    font-size: bold;
-
-    width: 100%;
-    padding: 0.6rem;
+    padding: $p-s;
 
     border-radius: 5rem;
+    border: .4rem solid $white;
+
+    background-color: $yellow-green;
+    color: $indigo-dye;
   }
 }
 
-@media (min-width: 375px) and (max-width: 430px) {
+
+@media (width <= 1440px){
+
   ._hm_container span {
     font-size: 3rem;
   }
 
-  ._hm_container img {
-    width: 10rem;
-    height: 10rem;
+  ._hm_container {
+    margin-bottom: 5rem;
+    img {
+      width: 15rem;
+      height: 15rem;
+    }
   }
 
-  ._hm_btn_containers button {
-    font-size: 1.4rem;
+  ._hm_btn_containers {
+    align-items: center;
+
+    button {
+      font-size: 2.2rem;
+      width: 80%;
+    }
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (width <= 768px){
 
   ._hm_container span {
     font-size: 3rem;
@@ -85,26 +99,5 @@
 }
 
 
-@media (min-width: 1440px) and (max-width: 2560px){
 
-  ._hm_container span {
-    font-size: 3rem;
-  }
 
-  ._hm_container {
-    margin-bottom: 5rem;
-    img {
-      width: 15rem;
-      height: 15rem;
-    }
-  }
-
-  ._hm_btn_containers {
-    align-items: center;
-
-    button {
-      font-size: 2.2rem;
-      width: 80%;
-    }
-  }
-}

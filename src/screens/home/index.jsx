@@ -26,7 +26,7 @@ function Home() {
           >
             Jogar
           </motion.button>
-          <motion.button
+          {/* <motion.button
             whileTap={{ scale: 0.85 }}
             className="_hm_cancel_game"
             onClick={() => {
@@ -36,7 +36,7 @@ function Home() {
             }}
           >
             Cancelar
-          </motion.button>
+          </motion.button> */}
         </div>
       </div>
     </div>

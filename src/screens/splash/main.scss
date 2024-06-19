@@ -7,10 +7,9 @@
 }
 
 ._sp_logo-nossa {
-  width: 500px;
-  height: 500px;
+  width: 200px;
+  height: 200px;
 
-  margin-top: -500px;
 }
 
 .teste {
@@ -24,5 +23,21 @@
 
   100% {
     transform: rotate('-6deg');
+  }
+}
+
+
+@media (max-width: 430px) {
+  ._sp_logo-nossa {
+    width: $logo-m;
+    height: $logo-m;
+  }
+}
+
+@media (max-width: 320px) {
+
+  ._sp_logo-nossa {
+    width: $logo-s;
+    height: $logo-s;
   }
 }
