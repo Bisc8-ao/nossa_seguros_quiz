@@ -49,3 +49,10 @@
     }
   }
 
+
+/* ============= Media Queries ============= */
+@media (width <= 320px) {
+  ._lo_btn_containers ._lo_cancel_game {
+    font-size: $font-btn-s;
+  }
+}

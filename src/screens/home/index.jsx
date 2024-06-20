@@ -1,7 +1,6 @@
+import "./main.scss";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import "./main.scss";
-import "../../styles/media-queries/home-media-queries.scss"
 
 import logo from "../../assets/images/NOSSA.png";
 
@@ -12,8 +11,8 @@ function Home() {
   return (
     <div className="_hm_wrapper">
       <div className="_hm_container">
-        <img src={logo} alt="" />
-        <span>Vamos Jogar?</span>
+        <img className="nossa_logo" src={logo} alt="" />
+        <span className="_hm_title">Vamos Jogar?</span>
 
         <div className="_hm_btn_containers">
           <motion.button

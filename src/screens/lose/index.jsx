@@ -1,9 +1,8 @@
+import "./main.scss";
 import { useNavigate } from "react-router-dom";
 
 import logo from '../../assets/images/NOSSA.png'
 
-import "./main.scss";
-import "../../styles/media-queries/lose-media-queries.scss";
 
 function Lose() {
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
 import "./main.scss";
-import "../../styles/media-queries/splash-media-queries.scss"
+
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { motion } from "framer-motion";

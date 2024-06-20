@@ -1,5 +1,4 @@
 import "./main.scss";
-import "../../styles/media-queries/trivia-media-querie.scss"
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";

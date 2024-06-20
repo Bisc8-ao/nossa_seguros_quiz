@@ -7,13 +7,13 @@
   // background: linear-gradient(to bottom, #020230, rgba(0, 0, 0, 0)),
   //   url("../../assets//images/bg.jpg") center no-repeat;
   background-size: cover;
+}
 
-  span {
-    color: #fff;
-    font-size: $font-title-s;
-    text-align: center;
-    display: block;
-  }
+._hm_title {
+  color: #fff;
+  font-size: $font-title-s;
+  text-align: center;
+  display: block;
 }
 
 ._hm_container {
@@ -21,31 +21,78 @@
   display: inherit;
   flex-direction: column;
   gap: 3rem;
+}
 
-  img {
-    width: $logo-s;
-    margin: auto;
-  }
+.nossa_logo {
+  width: $logo-s;
+  margin: auto;
 }
 
 ._hm_btn_containers {
-
   display: inherit;
   justify-content: center;
   margin-top: $mr-m;
-  
-  ._hm_start_game {
-    font-size: $font-btn-xxl;
-    font-weight: $font-bold;
+}
 
-    padding: $pd-s;
+._hm_start_game {
+  font-size: $font-btn-xxl;
+  font-weight: $font-bold;
 
-    border-radius: 5rem;
-    border: .4rem solid $white;
+  padding: $pd-s;
 
-    background-color: $yellow-green;
-    color: $indigo-dye;
+  border-radius: $bdr-s;
+  border: 0.4rem solid $white;
+
+  background-color: $yellow-green;
+  color: $indigo-dye;
+}
+
+/* ============= Media Queries ============= */
+@media (width <= 1440px) {
+  ._hm_container span {
+    font-size: 3rem;
+  }
+
+  ._hm_container {
+    margin-bottom: 5rem;
+    img {
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+
+  ._hm_btn_containers {
+    align-items: center;
+
+    button {
+      font-size: 2.2rem;
+      width: 80%;
+    }
   }
 }
 
+@media (width <= 768px) {
+  ._hm_container span {
+    font-size: 3rem;
+  }
 
+  ._hm_container {
+    margin-bottom: 5rem;
+    img {
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+
+  ._hm_btn_containers {
+    align-items: center;
+
+    button {
+      font-size: 2.2rem;
+      width: 80%;
+    }
+  }
+}
+
+@media (width <= 320px) {
+}
