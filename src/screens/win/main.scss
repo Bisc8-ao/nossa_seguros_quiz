@@ -1,52 +1,111 @@
 ._wn_wrapper {
-    min-height: 100vh;
-    padding: 30rem 10rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #032B50;
-    background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #032b50;
+  background-size: cover;
+}
+
+._wn_title {
+  color: #fff;
+  font-size: $font-title-m;
+  text-align: center;
+  display: block;
+}
+
+._wn_container {
+  width: 100%;
+  display: inherit;
+  flex-direction: column;
+  gap: $mr-m;
+}
+
+._wn_nossa_logo {
+  display: inline-block;
+  align-self: center;
+  width: $logo-xs;
+}
+
+._wn_btn_containers {
+  display: inherit;
+  flex-direction: inherit;
+  gap: $mr-s;
+}
+
+.player {
+  width: $logo-s;
+  height: $logo-s;
+}
+
+._wn_restart {
+  font-size: $font-btn-xl;
+  width: 70%;
+  margin: auto;
   
-    span {
-      color: #fff;
-      font-size: 6rem;
-      text-align: center;
-      display: block;
-    }
-  }
-  
-  ._wn_container {
-    width: 100%;
-    margin-top: -300px;
-    display: inherit;
-    flex-direction: column;
-    gap: 10rem;
-  
-    img {
-      display: inline-block;
-      align-self: center;
-    }
-  }
-  
-  ._wn_btn_containers {
-    margin-top: 3rem;
-  
-    display: inherit;
-    flex-direction: inherit;
-    gap: 5rem;
-  
-    button {
-      font-size: 3rem;
-      font-size: bold;
-  
-      width: 100%;
-      padding: 1.5rem;
-  
-      border-radius: 5rem;
-    }
-  }
-  
-  ._wn_start_game {
-  }
-  
+  padding: $mr-s;
+
+  border-radius: $bdr-s;
+  border: $bd-s solid $white;
+
+  background-color: $yellow-green;
+  color: $indigo-dye;
+}
+
 /* ============= Media Queries ============= */
+
+@media (width <= 430px) {
+  ._wn_nossa_logo {
+    width: $logo-m;
+  }
+
+  .player {
+    width: $logo-m;
+    height: $logo-m;
+  }
+
+  ._wn_title {
+    font-size: $font-title-xxl;
+  }
+  ._wn_restart {
+    font-size: $font-btn-m;
+  }
+}
+
+@media (width <= 375px) {
+  ._wn_nossa_logo {
+    width: $logo-s;
+  }
+
+  .player {
+    width: $logo-m;
+    height: $logo-m;
+  }
+
+  ._wn_title {
+    font-size: $font-title-xxl;
+  }
+  ._wn_restart {
+    font-size: $font-btn-m;
+  }
+}
+
+@media (width <= 320px) {
+
+  ._wn_nossa_logo {
+    width: $logo-s;
+  }
+
+  ._wn_title {
+    font-size: $font-title-m;
+  }
+
+  .player {
+    width: $logo-s;
+    height: $logo-s;
+  }
+
+  ._wn_restart {
+    font-size: $font-btn-s;
+  }
+}

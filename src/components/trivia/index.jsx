@@ -21,6 +21,8 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
+  console.log("===>", question)
+
   const [showLevel, setShowLevel] = useState(false);
 
   const [className, setClassName] = useState("_tr_answer");
@@ -47,13 +49,18 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
 
     delay(6000, () => {
       if (answer.correct) {
-        setQuestionNumber((prev) => prev + 1);
-        setSelectedAnswer(null);
-        setShowLevel(true);
+        if(questionNumber == data.length) {
+          navigate("/win");
+          setStop(true)
+        } else {
+          setQuestionNumber((prev) => prev + 1);
+          setSelectedAnswer(null);
+          setShowLevel(true);
+          delay(2000, () => {
+            setShowLevel(false);
+          });
+        }
 
-        delay(2000, () => {
-          setShowLevel(false);
-        });
       } else {
         setSelectedAnswer(null);
         navigate("/lose");
