@@ -16,21 +16,15 @@ function Win() {
     <div className="_wn_wrapper">
       <Confetti width={width} height={height} />
       <div className="_wn_container">
-        <img src={logo} alt="" width="300" />
-        <span>Você Ganhou!</span>
+        <img className="_wn_nossa_logo" src={logo} alt="" width="300" />
+        <span className="_wn_title">Você Ganhou!</span>
 
         <div>
-          <Player
-            src={champion}
-            className="player"
-            loop
-            autoplay
-            style={{ height: "450px", width: "450px" }}
-          />
+          <Player src={champion} className="player" loop autoplay />
         </div>
 
         <div className="_wn_btn_containers">
-          <button className="_wn_cancel_game" onClick={() => navigate("/")}>
+          <button className="_wn_restart" onClick={() => navigate("/")}>
             Jogar de Novo
           </button>
         </div>
