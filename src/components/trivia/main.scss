@@ -1,34 +1,32 @@
 ._tr_display_container {
   width: 100%;
-  padding: 200px 100px;
-  border-top: 5px solid green;
-  border-bottom: 5px solid green;
+  padding: $pd-xxl;
+  border-top: 0.8rem solid $yellow-green;
+  border-bottom: 0.8rem solid $yellow-green;
+}
 
-  margin-top: 200px;
-
-  ._tr_question {
-    color: #fff;
-    text-align: center;
-    font-size: 3.2rem;
-    display: flex;
-    justify-content: center;
-  }
+._tr_question {
+  color: $white;
+  text-align: center;
+  font-size: $font-title-m;
+  display: flex;
+  justify-content: center;
 }
 
 ._tr_answers_container {
-  padding: 150px 100px;
+  padding: $mr-x;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: $mr-m;
 }
 
 ._tr_answer {
-  padding: 3rem 2.5rem;
-  font-size: 2.6rem;
-  color: #fff;
-  border-radius: 3rem;
-  border: 5px solid green;
-  background: linear-gradient(#0e0124, #22074d);
+  padding: $pd-s;
+  font-size: $font-btn-xxl;
+  color: $white;
+  border-radius: 1rem;
+  border: 0.4rem solid $yellow-green;
+  background: linear-gradient($indigo-dye, $hooker-green);
   cursor: pointer;
   text-align: center;
 }
@@ -43,11 +41,30 @@
 }
 
 ._tr_answer._tr_wrong {
-    animation: wrong 3s ease forwards;
-  }
-
+  animation: wrong 3s ease forwards;
+}
 
 @keyframes correct {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+
+  20%,
+  40%,
+  60% {
+    background: linear-gradient($indigo-dye, $hooker-green);
+  }
+
+  62%,
+  100% {
+    background: green;
+    border-color: white;
+  }
+}
+
+@keyframes wrong {
   0%,
   22%,
   42% {
@@ -62,28 +79,36 @@
 
   62%,
   100% {
-    background: green;
+    background: red;
     border-color: white;
   }
 }
 
+/* ============= Media Queries ============= */
 
-@keyframes wrong {
-    0%,
-    22%,
-    42% {
-      background: mediumblue;
-    }
-  
-    20%,
-    40%,
-    60% {
-      background: linear-gradient(#0e0124, #22074d);
-    }
-  
-    62%,
-    100% {
-      background: red;
-      border-color: white;
-    }
+@media (width <= 430px) {
+  ._tr_question {
+    font-size: $font-title-xxl;
   }
+  ._tr_answer {
+    font-size: $font-btn-l;
+  }
+}
+
+@media (width <= 375px) {
+  ._tr_question {
+    font-size: $font-title-xxl;
+  }
+  ._tr_answer {
+    font-size: $font-btn-m;
+  }
+}
+
+@media (width <= 320px) {
+  ._tr_question {
+    font-size: $font-title-xl;
+  }
+  ._tr_answer {
+    font-size: $font-btn-s;
+  }
+}

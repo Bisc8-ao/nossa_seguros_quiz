@@ -1,56 +1,124 @@
+._le_wrapper,
+._le_container,
+._le_list_container,
+._le_item_list {
+  display: flex;
+}
+
+._le_container,
+._le_list_container {
+  flex-direction: column;
+}
+
 ._le_wrapper {
   min-height: 100vh;
-  padding: 0rem 10rem;
-  display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #020230, rgba(0, 0, 0, 0)),
-    url("../../assets//images/bg.jpg") center no-repeat;
-  background-size: cover;
-
-  span {
-    color: #fff;
-    font-size: 6rem;
-    text-align: center;
-    display: block;
-  }
+  // background: linear-gradient(to bottom, #020230, rgba(0, 0, 0, 0)),
+  //   url("../../assets//images/bg.jpg") center no-repeat;
+  // background-size: cover;
 }
 
 ._le_container {
   width: 100%;
-  display: inherit;
-  flex-direction: column;
-  gap: 8rem;
-
-  img {
-    display: inline-block;
-    align-self: center;
-  }
+  gap: $mr-s;
+}
+._le_nossa_logo {
+  align-self: center;
+  width: $logo-xs;
 }
 
 ._le_list_container {
-  margin-top: 3rem;
-
-  display: inherit;
-  flex-direction: inherit;
-  gap: 3rem;
+  align-items: center;
+  gap: $mr-xs;
 }
 
 ._le_item_list {
-  display: flex;
-  padding: 1rem 0;
   justify-content: center;
-  font-size: 2rem;
-  font-size: bold;
-  color: #000000;
-  background-color: #FFF;
 
-  width: 100%;
+  padding: $pd-xs 0;
 
-  border-radius: 5rem;
+  font-size: $font-btn-s;
+  font-weight: $font-bold;
+
+  color: $indigo-dye;
+  background-color: $white;
+
+  width: 80%;
+
+  border-radius: $bdr-s;
 }
 
 .active {
-  background-color: #ff0000;
-  color: #fff;
+  background-color: $yellow-green;
+  color: $white;
+}
+
+/* ============= Media Queries ============= */
+@media (width <= 430px) {
+  ._le_container {
+    gap: $mr-xxl;
+  }
+
+  ._le_nossa_logo {
+    width: $logo-s;
+  }
+
+  ._le_list_container {
+    gap: $mr-s;
+  }
+
+  ._le_item_list {
+    padding: pd-s 0;
+    font-size: $font-btn-s;
+  }
+}
+
+@media (width <= 414px) {
+  ._le_container {
+    gap: $mr-xxl;
+  }
+  ._le_nossa_logo {
+    width: $logo-xxs;
+  }
+
+  ._le_list_container {
+    gap: $mr-s;
+  }
+
+  ._le_item_list {
+    font-size: $font-btn-s;
+  }
+}
+
+@media (width <= 375px) {
+  ._le_container {
+    gap: $mr-xl;
+  }
+  ._le_nossa_logo {
+    width: $logo-xxs;
+  }
+
+  ._le_list_container {
+    gap: $mr-s;
+  }
+
+  ._le_item_list {
+    padding: pd-m 0;
+    font-size: $font-btn-xs;
+  }
+}
+
+@media (width <= 320px) {
+  ._le_container {
+    gap: $mr-s;
+  }
+
+  ._le_nossa_logo {
+    width: $logo-xs;
+  }
+
+  ._le_list_container {
+    gap: $mr-xs;
+  }
 }

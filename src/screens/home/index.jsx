@@ -1,9 +1,9 @@
+import "./main.scss";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import logo from "../../assets/images/NOSSA.png";
 
-import "./main.scss";
 
 function Home() {
   const navigate = useNavigate();
@@ -11,8 +11,8 @@ function Home() {
   return (
     <div className="_hm_wrapper">
       <div className="_hm_container">
-        <img src={logo} alt="" width="300" />
-        <span>Vamos Jogar?</span>
+        <img className="nossa_logo" src={logo} alt="" />
+        <span className="_hm_title">Vamos Jogar?</span>
 
         <div className="_hm_btn_containers">
           <motion.button
@@ -26,15 +26,17 @@ function Home() {
           >
             Jogar
           </motion.button>
-          <motion.button whileTap={{ scale: 0.85 }}
+          {/* <motion.button
+            whileTap={{ scale: 0.85 }}
             className="_hm_cancel_game"
             onClick={() => {
               setTimeout(() => {
                 navigate("/");
               }, 500);
-            }}>
+            }}
+          >
             Cancelar
-          </motion.button>
+          </motion.button> */}
         </div>
       </div>
     </div>

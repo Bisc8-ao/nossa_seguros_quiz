@@ -1,4 +1,5 @@
 import "./main.scss";
+
 import { useState } from "react";
 import { questions } from "../../data/questions";
 

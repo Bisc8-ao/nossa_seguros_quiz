@@ -1,15 +1,16 @@
+
 ._lo_wrapper {
     min-height: 100vh;
-    padding: 30rem 10rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, #020230, rgba(0, 0, 0, 0)), url("../../assets//images/bg.jpg") center no-repeat;
-    background-size: cover;
+    // background: linear-gradient(to bottom, #020230, rgba(0, 0, 0, 0)), url("../../assets//images/bg.jpg") center no-repeat;
+    // background-size: cover;
   
     span {
-      color: #fff;
-      font-size: 6rem;
+      color: $white;
+      font-size: $font-title-xl;
       text-align: center;
       display: block;
     }
@@ -17,35 +18,41 @@
   
   ._lo_container {
     width: 100%;
-    margin-top: -300px;
     display: inherit;
     flex-direction: column;
-    gap: 10rem;
+    gap: $mr-xxl;
   
     img {
       display: inline-block;
       align-self: center;
+
+      width: $logo-s;
     }
   }
   
   ._lo_btn_containers {
-    margin-top: 3rem;
-  
+    margin-top: $mr-m;
     display: inherit;
-    flex-direction: inherit;
-    gap: 5rem;
+    
+    ._lo_cancel_game {
+      font-size: $font-btn-xl;
+      width: 70%;
+      margin: auto;
+      
+      padding: $mr-s;
   
-    button {
-      font-size: 3rem;
-      font-size: bold;
-  
-      width: 100%;
-      padding: 1.5rem;
-  
-      border-radius: 5rem;
+      border-radius: $bdr-s;
+      border: $bd-s solid $white;
+
+      background-color: $yellow-green;
+      color: $indigo-dye;
     }
   }
-  
-  ._lo_start_game {
+
+
+/* ============= Media Queries ============= */
+@media (width <= 320px) {
+  ._lo_btn_containers ._lo_cancel_game {
+    font-size: $font-btn-s;
   }
-  
+}

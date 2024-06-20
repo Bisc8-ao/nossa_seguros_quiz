@@ -1,50 +1,98 @@
 ._hm_wrapper {
   min-height: 100vh;
-  padding: 30rem 10rem;
+  padding: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #020230, rgba(0, 0, 0, 0)), url("../../assets//images/bg.jpg") center no-repeat;
+  // background: linear-gradient(to bottom, #020230, rgba(0, 0, 0, 0)),
+  //   url("../../assets//images/bg.jpg") center no-repeat;
   background-size: cover;
+}
 
-  span {
-    color: #fff;
-    font-size: 6rem;
-    text-align: center;
-    display: block;
-  }
+._hm_title {
+  color: #fff;
+  font-size: $font-title-s;
+  text-align: center;
+  display: block;
 }
 
 ._hm_container {
   width: 100%;
-  margin-top: -300px;
   display: inherit;
   flex-direction: column;
-  gap: 10rem;
+  gap: 3rem;
+}
 
-  img {
-    display: inline-block;
-    align-self: center;
-  }
+.nossa_logo {
+  width: $logo-s;
+  margin: auto;
 }
 
 ._hm_btn_containers {
-  margin-top: 3rem;
-
   display: inherit;
-  flex-direction: inherit;
-  gap: 5rem;
-
-  button {
-    font-size: 3rem;
-    font-size: bold;
-
-    width: 100%;
-    padding: 1.5rem;
-
-    border-radius: 5rem;
-  }
+  justify-content: center;
+  margin-top: $mr-m;
 }
 
 ._hm_start_game {
+  font-size: $font-btn-xxl;
+  font-weight: $font-bold;
+
+  padding: $pd-s;
+
+  border-radius: $bdr-s;
+  border: 0.4rem solid $white;
+
+  background-color: $yellow-green;
+  color: $indigo-dye;
+}
+
+/* ============= Media Queries ============= */
+@media (width <= 1440px) {
+  ._hm_container span {
+    font-size: 3rem;
+  }
+
+  ._hm_container {
+    margin-bottom: 5rem;
+    img {
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+
+  ._hm_btn_containers {
+    align-items: center;
+
+    button {
+      font-size: 2.2rem;
+      width: 80%;
+    }
+  }
+}
+
+@media (width <= 768px) {
+  ._hm_container span {
+    font-size: 3rem;
+  }
+
+  ._hm_container {
+    margin-bottom: 5rem;
+    img {
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+
+  ._hm_btn_containers {
+    align-items: center;
+
+    button {
+      font-size: 2.2rem;
+      width: 80%;
+    }
+  }
+}
+
+@media (width <= 320px) {
 }
