@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import logo from '../../assets/images/NOSSA.png'
 
 import "./main.scss";
+import "../../styles/media-queries/lose-media-queries.scss";
 
 function Lose() {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ function Lose() {
   return (
     <div className="_lo_wrapper">
       <div className="_lo_container">
-        <img src={logo} alt="" width="300"/>
+        <img src={logo} alt=""/>
         <span>Você Perdeu!</span>
 
         <div className="_lo_btn_containers">

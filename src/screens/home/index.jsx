@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import "./main.scss";
+import "../../styles/media-queries/home-media-queries.scss"
 
 import logo from "../../assets/images/NOSSA.png";
 
-import "./main.scss";
 
 function Home() {
   const navigate = useNavigate();

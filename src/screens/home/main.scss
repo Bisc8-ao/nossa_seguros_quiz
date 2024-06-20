@@ -23,8 +23,7 @@
   gap: 3rem;
 
   img {
-    width: $logo-extra-small;
-    height: $logo-extra-small;
+    width: $logo-s;
     margin: auto;
   }
 }
@@ -33,13 +32,13 @@
 
   display: inherit;
   justify-content: center;
-  margin-top: $m-m;
+  margin-top: $mr-m;
   
   ._hm_start_game {
     font-size: $font-btn-xxl;
     font-weight: $font-bold;
 
-    padding: $p-s;
+    padding: $pd-s;
 
     border-radius: 5rem;
     border: .4rem solid $white;
@@ -48,56 +47,5 @@
     color: $indigo-dye;
   }
 }
-
-
-@media (width <= 1440px){
-
-  ._hm_container span {
-    font-size: 3rem;
-  }
-
-  ._hm_container {
-    margin-bottom: 5rem;
-    img {
-      width: 15rem;
-      height: 15rem;
-    }
-  }
-
-  ._hm_btn_containers {
-    align-items: center;
-
-    button {
-      font-size: 2.2rem;
-      width: 80%;
-    }
-  }
-}
-
-@media (width <= 768px){
-
-  ._hm_container span {
-    font-size: 3rem;
-  }
-
-  ._hm_container {
-    margin-bottom: 5rem;
-    img {
-      width: 15rem;
-      height: 15rem;
-    }
-  }
-
-  ._hm_btn_containers {
-    align-items: center;
-
-    button {
-      font-size: 2.2rem;
-      width: 80%;
-    }
-  }
-}
-
-
 
 

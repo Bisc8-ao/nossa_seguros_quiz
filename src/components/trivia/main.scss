@@ -14,19 +14,19 @@
 }
 
 ._tr_answers_container {
-  padding: $mg-x;
+  padding: $mr-x;
   display: flex;
   flex-direction: column;
-  gap: $m-m;
+  gap: $mr-m;
 }
 
 ._tr_answer {
-  padding: $p-s;
+  padding: $pd-s;
   font-size: $font-btn-xxl;
-  color: #fff;
+  color: $white;
   border-radius: 1rem;
-  border: 5px solid green;
-  background: linear-gradient(#0e0124, #22074d);
+  border: .4rem solid $yellow-green;
+  background: linear-gradient($indigo-dye, $hooker-green);
   cursor: pointer;
   text-align: center;
 }
@@ -55,7 +55,7 @@
   20%,
   40%,
   60% {
-    background: linear-gradient(#0e0124, #22074d);
+    background: linear-gradient($indigo-dye, $hooker-green);
   }
 
   62%,
@@ -85,3 +85,4 @@
       border-color: white;
     }
   }
+

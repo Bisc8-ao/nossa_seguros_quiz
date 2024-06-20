@@ -1,0 +1,54 @@
+@media (width <= 1440px){
+
+    ._hm_container span {
+      font-size: 3rem;
+    }
+  
+    ._hm_container {
+      margin-bottom: 5rem;
+      img {
+        width: 15rem;
+        height: 15rem;
+      }
+    }
+  
+    ._hm_btn_containers {
+      align-items: center;
+  
+      button {
+        font-size: 2.2rem;
+        width: 80%;
+      }
+    }
+  }
+  
+  @media (width <= 768px){
+  
+    ._hm_container span {
+      font-size: 3rem;
+    }
+  
+    ._hm_container {
+      margin-bottom: 5rem;
+      img {
+        width: 15rem;
+        height: 15rem;
+      }
+    }
+  
+    ._hm_btn_containers {
+      align-items: center;
+  
+      button {
+        font-size: 2.2rem;
+        width: 80%;
+      }
+    }
+  }
+  
+  
+  
+  @media (width <= 320px) {
+  
+  }
+  

@@ -1,4 +1,5 @@
 import "./main.scss";
+import "../../styles/media-queries/quiz-media-querie.scss";
 import { useState } from "react";
 import { questions } from "../../data/questions";
 
