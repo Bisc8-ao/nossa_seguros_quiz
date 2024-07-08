@@ -5,7 +5,7 @@ function Levels({ data, questionNumber }) {
   return (
     <div className="_le_wrapper">
       <div className="_le_container">
-        <img className="_le_nossa_logo" src={logo} alt=""/>
+        <img className="_le_nossa_logo" src={logo} alt="" />
 
         <ul className="_le_list_container">
           {data.map((item) => {
