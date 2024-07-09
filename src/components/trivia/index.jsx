@@ -1,7 +1,7 @@
 import "./main.scss";
 
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSound } from "use-sound";
 
@@ -33,6 +33,7 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   const [wrongAnswerSound] = useSound(wrong);
   const [isBlocked, setIsBlocked] = useState(false);
   const [timerWidth, setTimerWidth] = useState(100);
+  const intervalRef = useRef(null)
 
   useEffect(() => {
     letsPlay();
@@ -45,11 +46,11 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
 
   useEffect(() => {
     if (timerWidth > 0) {
-      const interval = setInterval(() => {
+      intervalRef.current = setInterval(() => {
         setTimerWidth((prev) => prev - 100 / 300);
       }, 100);
 
-      return () => clearInterval(interval);
+      return () => clearInterval(intervalRef.current);
     } else {
       navigate("/lose");
       setStop(true);
@@ -64,6 +65,8 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
 
   function handleClick(answer) {
     if (isBlocked) return;
+
+    clearInterval(intervalRef.current);
 
     setIsBlocked(true);
     setSelectedAnswer(answer);
@@ -89,10 +92,17 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
             setSelectedAnswer(null);
             setIsBlocked(false);
           });
-          setShowLevel(true);
-          delay(2000, () => {
-            setShowLevel(false);
-          });
+
+          // Mostrar o nível a cada mudança de nível
+          if (
+            (questionNumber === 4 && questionNumber < 8) ||
+            (questionNumber === 8 && questionNumber < 10)
+          ) {
+            setShowLevel(true);
+            delay(2000, () => {
+              setShowLevel(false);
+            });
+          }
         }
       } else {
         wrongAnswerSound();
