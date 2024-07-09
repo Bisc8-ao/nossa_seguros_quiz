@@ -1,16 +1,18 @@
 import "./main.scss";
 
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSound } from "use-sound";
+
+import { SoundContext } from "../../context/soundContext";
 
 import Levels from "../levels";
 import styled from "styled-components";
 
 import { levels } from "../../data/levels";
 
-import play from "../../assets/sounds/play.mp3";
+import gaming from "../../assets/sounds/gaming.mp3";
 import correct from "../../assets/sounds/correct.mp3";
 import wrong from "../../assets/sounds/wrong.mp3";
 
@@ -27,17 +29,24 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showLevel, setShowLevel] = useState(false);
+
   const [className, setClassName] = useState("_tr_answer");
-  const [letsPlay] = useSound(play);
+
+  const [gamingSound] = useSound(gaming);
   const [correctAnswerSound] = useSound(correct);
   const [wrongAnswerSound] = useSound(wrong);
+  const {playSound, setPlaySound} = useContext(SoundContext);
+
   const [isBlocked, setIsBlocked] = useState(false);
+  
   const [timerWidth, setTimerWidth] = useState(100);
   const intervalRef = useRef(null)
 
   useEffect(() => {
-    letsPlay();
-  }, [letsPlay]);
+    if (playSound) {
+      gamingSound
+    }
+  }, [playSound])
 
   useEffect(() => {
     setQuestion(data[questionNumber - 1]);
@@ -52,6 +61,7 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
 
       return () => clearInterval(intervalRef.current);
     } else {
+      setPlaySound(false)
       navigate("/lose");
       setStop(true);
     }
@@ -109,6 +119,7 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
         setSelectedAnswer(null);
         navigate("/lose");
         setStop(true);
+        setPlaySound(false)
       }
     });
   }

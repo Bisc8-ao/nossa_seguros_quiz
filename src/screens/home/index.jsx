@@ -2,8 +2,8 @@ import "./main.scss";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import logo from "../../assets/images/NOSSA.png";
 
+import logo from "../../assets/images/NOSSA.png";
 
 function Home() {
   const navigate = useNavigate();
@@ -18,25 +18,10 @@ function Home() {
           <motion.button
             whileTap={{ scale: 0.85 }}
             className="_hm_start_game"
-            onClick={() => {
-              setTimeout(() => {
-                navigate("/quiz");
-              }, 500);
-            }}
+            onClick={() => navigate("/explanation")}
           >
             Jogar
           </motion.button>
-          {/* <motion.button
-            whileTap={{ scale: 0.85 }}
-            className="_hm_cancel_game"
-            onClick={() => {
-              setTimeout(() => {
-                navigate("/");
-              }, 500);
-            }}
-          >
-            Cancelar
-          </motion.button> */}
         </div>
       </div>
     </div>
