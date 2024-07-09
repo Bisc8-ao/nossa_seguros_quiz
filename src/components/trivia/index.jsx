@@ -52,7 +52,7 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
       return () => clearInterval(interval);
     } else {
       navigate("/lose");
-      setStop(treu);
+      setStop(true);
     }
   }, [timerWidth, navigate, setStop]);
 
