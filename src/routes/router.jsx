@@ -6,7 +6,6 @@ import Quiz from "../screens/quiz";
 import Win from "../screens/win";
 import Lose from "../screens/lose";
 import Intro from "../screens/intro";
-import Explanation from "../screens/explanation";
 
 
 const Router = () => {
@@ -19,7 +18,6 @@ const Router = () => {
       <Route path="/quiz" element={<Quiz />} />
       <Route path="/win" element={<Win />} />
       <Route path="/lose" element={<Lose />} />
-      <Route path="/explanation" element={<Explanation />} />
     </Routes>
   </BrowserRouter>
   )

@@ -14,6 +14,7 @@
   min-height: 100vh;
   align-items: center;
   justify-content: center;
+  padding: 0 3rem;
   // background: linear-gradient(to bottom, #020230, rgba(0, 0, 0, 0)),
   //   url("../../assets//images/bg.jpg") center no-repeat;
   // background-size: cover;
@@ -23,6 +24,7 @@
   width: 100%;
   gap: $mr-s;
 }
+
 ._le_nossa_logo {
   align-self: center;
   width: $logo-xs;
@@ -35,17 +37,12 @@
 
 ._le_item_list {
   justify-content: center;
-
   padding: $pd-xs 0;
-
   font-size: $font-btn-s;
   font-weight: $font-bold;
-
   color: $indigo-dye;
   background-color: $white;
-
   width: 80%;
-
   border-radius: $bdr-s;
 }
 
@@ -54,8 +51,48 @@
   color: $white;
 }
 
+._le_message {
+  font-size: $font-title-xl;
+  text-align: center;
+  margin-bottom: $mr-m;
+  color: white;
+}
+
+._le_buttons {
+  display: flex;
+  gap: $mr-m;
+  justify-content: center;
+  flex-direction: column;
+}
+
+._le_button {
+  padding: $pd-xs $pd-m;
+  font-size: $font-btn-l;
+  font-weight: $font-bold;
+  color: $white;
+  border: none;
+  border-radius: $bdr-s;
+  cursor: pointer;
+}
+
+._le_button_yes {
+  background-color: $yellow-green;
+}
+
+._le_button_yes:hover {
+  background-color: darken($yellow-green, 10%);
+}
+
+._le_button_no {
+  background-color: $chili-red;
+}
+
+._le_button_no:hover {
+  background-color: darken($chili-red, 10%);
+}
+
 /* ============= Media Queries ============= */
-@media (width <= 430px) {
+@media (max-width: 430px) {
   ._le_container {
     gap: $mr-xxl;
   }
@@ -69,12 +106,12 @@
   }
 
   ._le_item_list {
-    padding: pd-s 0;
+    padding: $pd-s 0;
     font-size: $font-btn-s;
   }
 }
 
-@media (width <= 414px) {
+@media (max-width: 414px) {
   ._le_container {
     gap: $mr-xxl;
   }
@@ -91,7 +128,7 @@
   }
 }
 
-@media (width <= 375px) {
+@media (max-width: 375px) {
   ._le_container {
     gap: $mr-xl;
   }
@@ -104,12 +141,12 @@
   }
 
   ._le_item_list {
-    padding: pd-m 0;
+    padding: $pd-m 0;
     font-size: $font-btn-xs;
   }
 }
 
-@media (width <= 320px) {
+@media (max-width: 320px) {
   ._le_container {
     gap: $mr-s;
   }
