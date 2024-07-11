@@ -32,6 +32,7 @@ const Circle = styled.circle`
   stroke: ${({ color }) => color};
 `;
 
+
 const Time = styled.div`
   position: absolute;
   font-size: 16px;
