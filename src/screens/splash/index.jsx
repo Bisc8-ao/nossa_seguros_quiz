@@ -18,7 +18,7 @@ export default function Splash() {
 
   return (
     <div className="_sp_wrapper">
-      <motion.img
+      <img
         className="_sp_logo-nossa teste"
         src={logo}
         alt=""

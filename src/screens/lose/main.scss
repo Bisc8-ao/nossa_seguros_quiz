@@ -1,6 +1,6 @@
 ._lo_wrapper {
   min-height: 100vh;
-  padding: 1rem;
+  padding: 1rem 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,10 +35,11 @@
   margin-top: $mr-m;
 }
 ._lo_cancel_game {
-  font-size: $font-btn-xxl;
+  font-size: $font-btn-m;
   font-weight: $font-bold;
+  width: 100%;
 
-  padding: $pd-s;
+  padding: $pd-m;
 
   background-color: $yellow-green;
   color: $indigo-dye;
