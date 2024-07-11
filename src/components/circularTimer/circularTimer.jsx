@@ -26,12 +26,11 @@ const CircleBackground = styled.circle`
 const Circle = styled.circle`
   fill: none;
   stroke-width: 5;
-  stroke-dasharray: 157; // Circunferência do círculo (2 * PI * R) com R = 25
-  stroke-dashoffset: ${({ timeLeft }) => (157 * (100 - timeLeft)) / 100};
+  stroke-dasharray: 125.6; // Circunferência do círculo (2 * PI * R) com R = 20
+  stroke-dashoffset: ${({ timeLeft }) => (125.6 * (100 - timeLeft)) / 100};
   transition: stroke-dashoffset 1s linear, stroke 1s linear;
   stroke: ${({ color }) => color};
 `;
-
 
 const Time = styled.div`
   position: absolute;
@@ -50,7 +49,7 @@ const CircularTimer = forwardRef(({ duration, onComplete }, ref) => {
       setTimeLeft(duration);
       intervalRef.current = setInterval(() => {
         setTimeLeft((prevTime) => {
-          if (prevTime > 1) {
+          if (prevTime > 0) {
             return prevTime - 1;
           } else {
             clearInterval(intervalRef.current);

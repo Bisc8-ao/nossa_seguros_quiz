@@ -6,9 +6,6 @@ import { motion } from "framer-motion";
 
 import logo from "../../assets/images/NOSSA.png";
 
-
-import logo from "../../assets/images/NOSSA.png";
-
 function Home() {
   const navigate = useNavigate();
 
@@ -27,11 +24,6 @@ function Home() {
                 navigate("/intro");
               }, 500);
             }}
-          >
-            Jogar
-          </motion.button>
-          <div className="_hm_btn_start"></div>
-            onClick={() => navigate("/explanation")}
           >
             Jogar
           </motion.button>

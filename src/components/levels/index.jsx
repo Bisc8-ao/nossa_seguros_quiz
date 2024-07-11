@@ -1,28 +1,16 @@
 import "./main.scss";
 import logo from "../../assets/images/NOSSA.png";
 
-function Levels({ data, questionNumber }) {
+function Levels({ questionNumber, onContinue, onQuit }) {
   return (
     <div className="_le_wrapper">
       <div className="_le_container">
         <img className="_le_nossa_logo" src={logo} alt="" />
-
-        <ul className="_le_list_container">
-          {data.map((item) => {
-            return (
-              <li
-                className={
-                  questionNumber === item.id
-                    ? "_le_item_list active"
-                    : "_le_item_list"
-                }
-                key={item.id}
-              >
-                {item.level}
-              </li>
-            );
-          })}
-        </ul>
+        <p>Você chegou ao nível {questionNumber}. Deseja continuar?</p>
+        <div className="_le_buttons">
+          <button className="_le_button" onClick={onContinue}>Sim</button>
+          <button className="_le_button" onClick={onQuit}>Não</button>
+        </div>
       </div>
     </div>
   );
