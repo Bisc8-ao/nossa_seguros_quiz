@@ -5,6 +5,16 @@
   border-bottom: 0.8rem solid $yellow-green;
 }
 
+._tr_header_game {
+  padding: 2rem 1rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+._tr_logo {
+  width: 200px;
+}
+
 ._tr_question {
   color: $white;
   text-align: center;
@@ -43,6 +53,8 @@
 ._tr_answer._tr_wrong {
   animation: wrong 3s ease forwards;
 }
+
+
 
 @keyframes correct {
   0%,

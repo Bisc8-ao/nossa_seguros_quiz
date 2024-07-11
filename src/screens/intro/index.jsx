@@ -6,28 +6,28 @@ import { motion } from "framer-motion";
 import logo from "../../assets/images/NOSSA.png";
 
 
-function Home() {
+function Intro() {
   const navigate = useNavigate();
 
   return (
-    <div className="_hm_wrapper">
-      <div className="_hm_container">
+    <div className="in_wrapper">
+      <div className="in_container">
         <img className="nossa_logo" src={logo} alt="" />
-        <span className="_hm_title">Vamos Jogar?</span>
+        <span className="in_title">Lorem Ipsum dolor</span>
+        <span className="in_title">Lorem Ipsum dolor</span>
 
-        <div className="_hm_btn_containers">
+        <div className="in_btn_containers">
           <motion.button
             whileTap={{ scale: 0.85 }}
-            className="_hm_start_game"
+            className="in_start_game"
             onClick={() => {
               setTimeout(() => {
-                navigate("/intro");
+                navigate("/quiz");
               }, 500);
             }}
           >
-            Jogar
+            Continuar
           </motion.button>
-          <div className="_hm_btn_start"></div>
           
         </div>
       </div>
@@ -35,4 +35,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Intro;

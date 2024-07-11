@@ -1,29 +1,19 @@
 import "./main.scss";
-
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSound } from "use-sound";
-
 import Levels from "../levels";
 import styled from "styled-components";
-
 import { levels } from "../../data/levels";
-
+import nossa_logo from "../../assets/svg/nossa_logo.svg";
 import play from "../../assets/sounds/play.mp3";
 import correct from "../../assets/sounds/correct.mp3";
 import wrong from "../../assets/sounds/wrong.mp3";
-
-const Timer = styled.div`
-  width: ${({ width }) => width}%;
-  height: 30px;
-  background-color: red;
-  tansition: width 0.1s linear;
-`;
+import CircularTimer from "../circularTimer/circularTimer"; // Importa o temporizador circular
 
 function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   const navigate = useNavigate();
-
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showLevel, setShowLevel] = useState(false);
@@ -32,8 +22,8 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   const [correctAnswerSound] = useSound(correct);
   const [wrongAnswerSound] = useSound(wrong);
   const [isBlocked, setIsBlocked] = useState(false);
-  const [timerWidth, setTimerWidth] = useState(100);
-  const intervalRef = useRef(null)
+  const timerRef = useRef(null);
+  const duration = 30; // Defina a duração do temporizador em segundos
 
   useEffect(() => {
     letsPlay();
@@ -41,21 +31,15 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
 
   useEffect(() => {
     setQuestion(data[questionNumber - 1]);
-    setTimerWidth(100);
+    if (timerRef.current) {
+      timerRef.current.startTimer();
+    }
   }, [data, questionNumber]);
 
-  useEffect(() => {
-    if (timerWidth > 0) {
-      intervalRef.current = setInterval(() => {
-        setTimerWidth((prev) => prev - 100 / 300);
-      }, 100);
-
-      return () => clearInterval(intervalRef.current);
-    } else {
-      navigate("/lose");
-      setStop(true);
-    }
-  }, [timerWidth, navigate, setStop]);
+  const handleTimerComplete = () => {
+    navigate("/lose");
+    setStop(true);
+  };
 
   const delay = (duration, callback) => {
     setTimeout(() => {
@@ -66,7 +50,9 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   function handleClick(answer) {
     if (isBlocked) return;
 
-    clearInterval(intervalRef.current);
+    if (timerRef.current) {
+      timerRef.current.stopTimer(); // Pare o temporizador
+    }
 
     setIsBlocked(true);
     setSelectedAnswer(answer);
@@ -80,11 +66,12 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
 
     delay(6000, () => {
       if (answer.correct) {
-        if (questionNumber == data.length) {
+        if (questionNumber === data.length) {
           correctAnswerSound();
           navigate("/win");
           setStop(true);
           setIsBlocked(false);
+          setClassName("");
         } else {
           correctAnswerSound();
           delay(3000, () => {
@@ -116,10 +103,17 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   return (
     <div>
       {showLevel ? (
-        <Levels data={levels} questionNumber={questionNumber} />
+        <Levels
+          questionNumber={questionNumber}
+          setQuestionNumber={setQuestionNumber}
+          setStop={setStop}
+        />
       ) : (
         <>
-          <Timer width={timerWidth} />
+          <div className="_tr_header_game">
+            <img src={nossa_logo} alt="" className="_tr_logo"/>
+            <CircularTimer ref={timerRef} duration={duration} onComplete={handleTimerComplete} />
+          </div>
           <div className="_tr_display_container">
             <span className="_tr_question">{question?.question}</span>
           </div>
