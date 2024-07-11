@@ -3,8 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 
+
 import logo from "../../assets/images/NOSSA.png";
 
+
+import logo from "../../assets/images/NOSSA.png";
 
 function Home() {
   const navigate = useNavigate();
@@ -28,7 +31,10 @@ function Home() {
             Jogar
           </motion.button>
           <div className="_hm_btn_start"></div>
-          
+            onClick={() => navigate("/explanation")}
+          >
+            Jogar
+          </motion.button>
         </div>
       </div>
     </div>

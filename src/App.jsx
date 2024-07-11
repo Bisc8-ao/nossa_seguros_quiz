@@ -1,10 +1,13 @@
 import "./App.scss";
 import Router from "./routes/router";
+import { SoundProvider } from "./context/soundContext";
 
 function App() {
   return (
     <>
-      <Router />
+      <SoundProvider>
+        <Router />
+      </SoundProvider>
     </>
   );
 }
