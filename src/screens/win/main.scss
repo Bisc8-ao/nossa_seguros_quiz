@@ -3,13 +3,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #020230, rgba(0, 0, 0, 0)), url("../../assets//images/bg.jpg") center no-repeat;
+  background: url("../../assets/svg/background.svg") no-repeat;
   background-size: cover;
 }
 
 ._wn_title {
   color: #fff;
-  font-size: $font-title-m;
+  font-size: $font-title-l;
   text-align: center;
   display: block;
 }

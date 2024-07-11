@@ -58,9 +58,20 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
 
   const handleQuit = () => {
     stopLetsPlay();
-    navigate("/lose");
+    const gameLevel = getGameLevel(questionNumber);
+    navigate("/win", { state: { message: `Concluiu o ${gameLevel}, venha buscar o seu prémio.` } });
     setStop(true);
   };
+
+  function getGameLevel(questionNumber) {
+    if (questionNumber <= 4) {
+      return "Nível 1";
+    } else if (questionNumber <= 8) {
+      return "Nível 2";
+    } else {
+      return "Nível 3";
+    }
+  }
 
   function handleClick(answer) {
     if (isBlocked) return;
@@ -84,7 +95,7 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
         if (questionNumber === data.length) {
           correctAnswerSound();
           stopLetsPlay();
-          navigate("/win");
+          navigate("/win", { state: { message: "Você venceu o Jogo" } });
           setStop(true);
           setIsBlocked(false);
           setClassName("");
