@@ -1,11 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'Aux Pro';
+    src: url('./assets/font/Aaux_ProBlack.ttf') format('truetype');
+    font-weight: 900;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 62%;
-    font-family: "Play", sans-serif;
+    font-family: "Aux Pro", sans-serif;
     outline: none;
     list-style: none;
 }

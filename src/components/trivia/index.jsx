@@ -1,28 +1,39 @@
 import "./main.scss";
-import { motion } from "framer-motion";
+
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+
+import { motion } from "framer-motion";
 import { useSound } from "use-sound";
+
 import Levels from "../levels";
+import CircularTimer from "../circularTimer/circularTimer"; // Importa o temporizador circular
+
 import { levels } from "../../data/levels";
+
 import nossa_logo from "../../assets/svg/nossa_logo.svg";
+
 import play from "../../assets/sounds/gaming.mp3";
 import correct from "../../assets/sounds/correct.mp3";
 import wrong from "../../assets/sounds/wrong.mp3";
-import CircularTimer from "../circularTimer/circularTimer"; // Importa o temporizador circular
 
 function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
+
   const navigate = useNavigate();
+  const timerRef = useRef(null);
+  const duration = 30; // Defina a duração do temporizador em segundos
+
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showLevel, setShowLevel] = useState(false);
   const [className, setClassName] = useState("_tr_answer");
-  const [letsPlay, { stop: stopLetsPlay }] = useSound(play);
+  const [isBlocked, setIsBlocked] = useState(false);
+
+  const [letsPlay, { stop: stopLetsPlay }] = useSound(play, { loop: true });
   const [correctAnswerSound] = useSound(correct);
   const [wrongAnswerSound] = useSound(wrong);
-  const [isBlocked, setIsBlocked] = useState(false);
-  const timerRef = useRef(null);
-  const duration = 30; // Defina a duração do temporizador em segundos
+
+
 
   useEffect(() => {
     letsPlay();
