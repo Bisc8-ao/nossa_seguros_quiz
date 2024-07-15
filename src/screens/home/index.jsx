@@ -17,7 +17,7 @@ function Home() {
   return (
     <div className="_hm_wrapper">
       <div className="_hm_container">
-        <img className="nossa_logo" src={logo} alt="" />
+        <img className="_hm_nossa_logo" src={logo} alt="" />
         <div className="_hm_btn_containers">
           <MainButton
             text="Quero Jogar"
