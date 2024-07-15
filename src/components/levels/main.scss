@@ -12,22 +12,31 @@
 
 ._le_wrapper {
   min-height: 100vh;
+
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 0 3rem;
-  // background: linear-gradient(to bottom, #020230, rgba(0, 0, 0, 0)),
-  //   url("../../assets//images/bg.jpg") center no-repeat;
-  // background-size: cover;
+  justify-content: space-between;
+  
+  background: url('../../assets//svg/background-2.svg') no-repeat;
+  background-size: cover;
 }
 
 ._le_container {
   width: 100%;
-  gap: $mr-s;
+  gap: 8rem;
+}
+
+._le_hole_container {
+  display: flex;
+  
+  position: relative;
+  align-items: center;
+  justify-content: center;
 }
 
 ._le_nossa_logo {
+  width: 80%;
   align-self: center;
-  width: $logo-xs;
 }
 
 ._le_list_container {
@@ -52,10 +61,15 @@
 }
 
 ._le_message {
-  font-size: $font-title-xl;
-  text-align: center;
+  width: 70%;
   margin-bottom: $mr-m;
+
+  font-size: 8rem;
+  text-wrap: wrap;
+  text-align: center;
   color: white;
+
+  position: absolute;
 }
 
 ._le_buttons {

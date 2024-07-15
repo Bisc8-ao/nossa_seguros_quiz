@@ -3,43 +3,29 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-`;
-
-const CircleContainer = styled.svg`
-  position: absolute;
   width: 100%;
+  height: 4rem;
+  background-color: transparet;
+`;
+
+const ProgressBar = styled.div`
   height: 100%;
-  transform: rotate(-90deg);
-`;
-
-const CircleBackground = styled.circle`
-  fill: none;
-  stroke: #e6e6e6;
-  stroke-width: 5;
-`;
-
-const Circle = styled.circle`
-  fill: none;
-  stroke-width: 5;
-  stroke-dasharray: 125.6; // Circunferência do círculo (2 * PI * R) com R = 20
-  stroke-dashoffset: ${({ timeLeft }) => (125.6 * (100 - timeLeft)) / 100};
-  transition: stroke-dashoffset 1s linear, stroke 1s linear;
-  stroke: ${({ color }) => color};
+  background-color: ${({ color }) => color};
+  width: ${({ percentage }) => percentage}%;
+  transition: width 1s linear, background-color 1s linear;
 `;
 
 const Time = styled.div`
   position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 16px;
   font-weight: bold;
   color: white;
 `;
 
-const CircularTimer = forwardRef(({ duration, onComplete }, ref) => {
+const HorizontalTimer = forwardRef(({ duration, onComplete }, ref) => {
   const [timeLeft, setTimeLeft] = useState(duration);
   const intervalRef = useRef(null);
 
@@ -73,19 +59,9 @@ const CircularTimer = forwardRef(({ duration, onComplete }, ref) => {
 
   return (
     <Container>
-      <CircleContainer viewBox="0 0 50 50">
-        <CircleBackground r="20" cx="25" cy="25" />
-        <Circle
-          r="20"
-          cx="25"
-          cy="25"
-          timeLeft={percentageLeft}
-          color={color}
-        />
-      </CircleContainer>
-      <Time>{timeLeft}s</Time>
+      <ProgressBar color={color} percentage={percentageLeft} />
     </Container>
   );
 });
 
-export default CircularTimer;
+export default HorizontalTimer;

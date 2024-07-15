@@ -2,26 +2,23 @@ import "./main.scss";
 
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-
-import { motion } from "framer-motion";
 import { useSound } from "use-sound";
 
+import Header from "../header/header";
+import Footer from "../footer/footer";
+import AnswerButton from "../buttons/answerButton";
+
 import Levels from "../levels";
-import CircularTimer from "../circularTimer/circularTimer"; // Importa o temporizador circular
-
-import { levels } from "../../data/levels";
-
-import nossa_logo from "../../assets/svg/nossa_logo.svg";
+import HorizontalTimer from "../horizontalTimer/index"; // Importa o temporizador circular
 
 import play from "../../assets/sounds/gaming.mp3";
 import correct from "../../assets/sounds/correct.mp3";
 import wrong from "../../assets/sounds/wrong.mp3";
 
 function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
-
   const navigate = useNavigate();
   const timerRef = useRef(null);
-  const duration = 30; // Defina a duração do temporizador em segundos
+  const duration = 30000; // Defina a duração do temporizador em segundos
 
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -32,8 +29,6 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   const [letsPlay, { stop: stopLetsPlay }] = useSound(play, { loop: true });
   const [correctAnswerSound] = useSound(correct);
   const [wrongAnswerSound] = useSound(wrong);
-
-
 
   useEffect(() => {
     letsPlay();
@@ -70,7 +65,9 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   const handleQuit = () => {
     stopLetsPlay();
     const gameLevel = getGameLevel(questionNumber);
-    navigate("/win", { state: { message: `Concluiu o ${gameLevel}, venha buscar o seu prémio.` } });
+    navigate("/win", {
+      state: { message: `Concluiu o ${gameLevel}, venha buscar o seu prémio.` },
+    });
     setStop(true);
   };
 
@@ -146,27 +143,33 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
           onQuit={handleQuit}
         />
       ) : (
-        <>
-          <div className="_tr_header_game">
-            <img src={nossa_logo} alt="" className="_tr_logo" />
-            <CircularTimer ref={timerRef} duration={duration} onComplete={handleTimerComplete} />
-          </div>
-          <div className="_tr_display_container">
-            <span className="_tr_question">{question?.question}</span>
+        <div className="_tr_wrapper">
+          <div>
+            <Header />
+            <div className="_timer_container">
+              <HorizontalTimer
+                ref={timerRef}
+                duration={duration}
+                onComplete={handleTimerComplete}
+              />
+            </div>
+            <div className="_tr_display_container">
+              <span className="_tr_question">{question?.question}</span>
+            </div>
           </div>
           <div className="_tr_answers_container">
             {question?.answers.map((answer, index) => (
-              <motion.div
-                whileTap={{ scale: 0.85 }}
-                className={selectedAnswer === answer ? className : "_tr_answer"}
+              <AnswerButton
+                answer={answer}
+                handleClick={handleClick}
                 key={index}
-                onClick={() => handleClick(answer)}
-              >
-                <p>{answer.text}</p>
-              </motion.div>
+                selectedAnswer={selectedAnswer}
+                className={className}
+              />
             ))}
           </div>
-        </>
+          <Footer />
+        </div>
       )}
     </div>
   );

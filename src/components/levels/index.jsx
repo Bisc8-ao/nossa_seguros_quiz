@@ -1,5 +1,10 @@
 import "./main.scss";
-import logo from "../../assets/images/NOSSA.png";
+
+import Header from "../header/header";
+import Footer from "../footer/footer";
+import MainButton from "../buttons/mainButton/mainButton";
+
+import hole from "../../assets/svg/hole.svg";
 
 const LEVELS = ["Nível 1", "Nível 2", "Nível 3"];
 
@@ -18,14 +23,20 @@ function Levels({ questionNumber, onContinue, onQuit }) {
 
   return (
     <div className="_le_wrapper">
+      <Header />
       <div className="_le_container">
-        <img className="_le_nossa_logo" src={logo} alt="Logo" />
-        <p className="_le_message">Você chegou ao {gameLevel}. Deseja continuar?</p>
+        <div className="_le_hole_container">
+          <img className="_le_nossa_logo" src={hole} alt="Logo" />
+          <p className="_le_message">
+            Concluiu o {gameLevel}. Deseja continuar?
+          </p>
+        </div>
         <div className="_le_buttons">
-          <button className="_le_button _le_button_yes" onClick={onContinue}>Sim</button>
-          <button className="_le_button _le_button_no" onClick={onQuit}>Não</button>
+          <MainButton text="Sim" handleClick={onContinue} transitionDelay={500}/>
+          <MainButton text="Não" handleClick={onQuit} transitionDelay={500}/>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

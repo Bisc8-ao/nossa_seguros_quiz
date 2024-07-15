@@ -1,18 +1,13 @@
 ._hm_wrapper {
   min-height: 100vh;
   padding: 10rem 5rem 3rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   background: url("../../assets/svg/background.svg") no-repeat;
   background-size: cover;
-}
-
-._hm_title {
-  color: #fff;
-  font-size: $font-title-s;
-  text-align: center;
-  display: block;
 }
 
 ._hm_container {

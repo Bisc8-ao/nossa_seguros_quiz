@@ -1,24 +1,34 @@
+._tr_wrapper {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: url("../../assets/svg/background-2.svg");
+  background-size: cover;
+}
+
+._timer_container {
+  border-top: 2rem solid $yellow-green;
+  border-bottom: 2rem solid $yellow-green;
+}
+
 ._tr_display_container {
   width: 100%;
-  padding: $pd-xxl;
-  border-top: 0.8rem solid $yellow-green;
-  border-bottom: 0.8rem solid $yellow-green;
+  padding: 8rem;
+  border-bottom: 2rem solid $yellow-green;
+  background-color: $indigo-dye;
 }
 
-._tr_header_game {
-  padding: 2rem 1rem;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-}
-._tr_logo {
-  width: 200px;
-}
 
 ._tr_question {
-  color: $white;
+  font-size: 8rem;
   text-align: center;
-  font-size: $font-title-m;
+  text-transform: uppercase;
+
+  color: $white;
+
   display: flex;
   justify-content: center;
 }
@@ -27,100 +37,8 @@
   padding: $mr-x;
   display: flex;
   flex-direction: column;
-  gap: $mr-m;
-}
-
-._tr_answer {
-  padding: $pd-s;
-  font-size: $font-btn-xxl;
-  color: $white;
-  border-radius: 1rem;
-  border: 0.4rem solid $yellow-green;
-  background: linear-gradient($indigo-dye, $hooker-green);
-  cursor: pointer;
-  text-align: center;
-}
-
-._tr_answer:hover,
-._tr_answer.active {
-  background: mediumblue;
-}
-
-._tr_answer._tr_correct {
-  animation: correct 3s ease forwards;
-}
-
-._tr_answer._tr_wrong {
-  animation: wrong 3s ease forwards;
-}
-
-
-
-@keyframes correct {
-  0%,
-  22%,
-  42% {
-    background: mediumblue;
-  }
-
-  20%,
-  40%,
-  60% {
-    background: linear-gradient($indigo-dye, $hooker-green);
-  }
-
-  62%,
-  100% {
-    background: green;
-    border-color: white;
-  }
-}
-
-@keyframes wrong {
-  0%,
-  22%,
-  42% {
-    background: mediumblue;
-  }
-
-  20%,
-  40%,
-  60% {
-    background: linear-gradient(#0e0124, #22074d);
-  }
-
-  62%,
-  100% {
-    background: red;
-    border-color: white;
-  }
+  gap: 4rem;
 }
 
 /* ============= Media Queries ============= */
 
-@media (width <= 430px) {
-  ._tr_question {
-    font-size: $font-title-xxl;
-  }
-  ._tr_answer {
-    font-size: $font-btn-l;
-  }
-}
-
-@media (width <= 375px) {
-  ._tr_question {
-    font-size: $font-title-xxl;
-  }
-  ._tr_answer {
-    font-size: $font-btn-m;
-  }
-}
-
-@media (width <= 320px) {
-  ._tr_question {
-    font-size: $font-title-xl;
-  }
-  ._tr_answer {
-    font-size: $font-btn-s;
-  }
-}

@@ -1,30 +1,32 @@
-import { useContext } from "react"
 import "./main.scss";
+
 import { useNavigate } from "react-router-dom";
-import { SoundContext } from "../../context/soundContext";
 
-import logo from '../../assets/images/NOSSA.png'
+import Header from "../../components/header/header";
+import Footer from "../../components/footer/footer"
+import MainButton from "../../components/buttons/mainButton/mainButton"
 
+import loseLogo from "../../assets/svg/lose.svg";
 
 function Lose() {
   const navigate = useNavigate();
 
   function handleClick() {
-    navigate("/")
+      navigate('/home')
+      window.location.reload()
   }
 
   return (
     <div className="_lo_wrapper">
+      <Header />
       <div className="_lo_container">
-        <img src={logo} alt=""/>
-        <span>Você Perdeu!</span>
+        <img className="_lo_nossa_logo" src={loseLogo} alt="" />
 
         <div className="_lo_btn_containers">
-          <button className="_lo_cancel_game" onClick={() => handleClick()}>
-            Reiniciar
-          </button>
+          <MainButton text="Jogar Novamente" handleClick={handleClick} transitionDelay={500}/>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

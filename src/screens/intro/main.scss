@@ -1,4 +1,4 @@
-.in_wrapper {
+._in_wrapper {
   min-height: 100vh;
 
   display: flex;
@@ -8,14 +8,14 @@
   background-size: cover;
 }
 
-.in_title {
+._in_title {
   color: #fff;
   font-size: $font-title-s;
   text-align: center;
   display: block;
 }
 
-.in_container {
+._in_container {
   width: 100%;
   display: inherit;
   flex-direction: column;
@@ -29,7 +29,7 @@
   margin: 0 auto;
 }
 
-.in_btn_containers {
+._in_btn_containers {
   display: inherit;
   justify-content: center;
   margin-top: $mr-m;

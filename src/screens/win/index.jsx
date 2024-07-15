@@ -1,34 +1,35 @@
-import { useNavigate, useLocation } from "react-router-dom";
-import { Player } from "@lottiefiles/react-lottie-player";
+import "./main.scss";
+
+import { useNavigate } from "react-router-dom";
 import { useWindowSize } from "@react-hook/window-size";
 import Confetti from "react-confetti";
 
-import logo from "../../assets/images/NOSSA.png";
-import champion from "../../assets/animations/champions.json";
+import Header from "../../components/header/header";
+import Footer from "../../components/footer/footer"
+import MainButton from "../../components/buttons/mainButton/mainButton"
 
-import "./main.scss";
+import winLogo from "../../assets/svg/win.svg";
 
 function Win() {
   const navigate = useNavigate();
-  const location = useLocation();
   const { width, height } = useWindowSize();
-  const message = location.state?.message || "Você venceu o Jogo"; // Mensagem padrão caso não seja passada
+
+  function handleClick() {
+      navigate('/')
+  }
 
   return (
     <div className="_wn_wrapper">
       <Confetti width={width} height={height} />
+      <Header />
       <div className="_wn_container">
-        <img className="_wn_nossa_logo" src={logo} alt="Logo" />
-        <span className="_wn_title">{message}</span>
-        <div>
-          <Player src={champion} className="player" loop autoplay />
-        </div>
+        <img className="_wn_nossa_logo" src={winLogo} alt="" />
+
         <div className="_wn_btn_containers">
-          <button className="_wn_restart" onClick={() => navigate("/")}>
-            Jogar de Novo
-          </button>
+          <MainButton text="Jogar Novamente" handleClick={handleClick} transitionDelay={500}/>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

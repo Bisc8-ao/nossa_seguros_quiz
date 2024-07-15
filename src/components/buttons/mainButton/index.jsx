@@ -2,14 +2,18 @@ import "./main.scss";
 
 import { motion } from "framer-motion";
 
-function MainButton({ text, handleClick }) {
+function MainButton({ text, handleClick, transitionDelay }) {
 
-
+console.log(!transitionDelay)
   return (
     <motion.button
       whileTap={{ scale: 0.85 }}
       className="_mb_btn"
-      onClick={() => handleClick()}
+      onClick={() => {
+        setTimeout(() => {
+          handleClick()
+        }, !transitionDelay ? 0 : transitionDelay)
+      }}
     >
       <span>{text}</span>
     </motion.button>

@@ -1,0 +1,67 @@
+
+._tr_answer {
+  text-align: center;
+  font-size: 7rem;
+  color: $white;
+
+  padding: 4rem 6rem;
+  border-radius: 50rem;
+  border: 1.5rem solid $yellow-green;
+  
+  background: $indigo-dye;
+  
+  cursor: pointer;
+}
+
+._tr_answer:hover,
+._tr_answer.active {
+  background: $hooker-green;
+}
+
+._tr_answer._tr_correct {
+  animation: correct 3s ease forwards;
+}
+
+._tr_answer._tr_wrong {
+  animation: wrong 3s ease forwards;
+}
+
+
+
+@keyframes correct {
+  0%,
+  22%,
+  42% {
+    background: $indigo-dye;
+  }
+
+  20%,
+  40%,
+  60% {
+    background: $hooker-green;
+  }
+
+  62%,
+  100% {
+    background: #39B54A;
+  }
+}
+
+@keyframes wrong {
+  0%,
+  22%,
+  42% {
+    background: $indigo-dye;
+  }
+
+  20%,
+  40%,
+  60% {
+    background: $hooker-green;
+  }
+
+  62%,
+  100% {
+    background: #E21726;
+  }
+}
