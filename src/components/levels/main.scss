@@ -24,6 +24,7 @@
 ._le_container {
   width: 100%;
   gap: 8rem;
+  padding: 0 $mr-xxl;
 }
 
 ._le_hole_container {
@@ -119,20 +120,44 @@
 
 }
 @media (width <= 430px) {
+  ._le_container {
+    gap: 3rem;
+  }
 
+  ._le_message {
+    font-size: 3.4rem;
+  }
+  ._le_buttons {
+    gap: 1rem;
+    padding: 0 2rem;
+  }
 }
 
 @media (width <= 414px) {
-  ._lo_container {
+  ._le_container {
     gap: 3rem;
-    padding: 0 1rem;
+  }
+
+  ._le_message {
+    font-size: 3.4rem;
+  }
+  ._le_buttons {
+    gap: 1rem;
+    padding: 0 2rem;
   }
 }
 
 @media (width <= 375px) {
-  ._lo_container {
-    gap: 3rem;
-    padding: 0 1rem;
+  ._le_container {
+    gap: 2rem;
+  }
+
+  ._le_message {
+    font-size: 3rem;
+  }
+  ._le_buttons {
+    gap: 1rem;
+    padding: 0 2rem;
   }
 }
 

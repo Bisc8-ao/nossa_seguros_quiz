@@ -18,7 +18,7 @@ import wrong from "../../assets/sounds/wrong.mp3";
 function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   const navigate = useNavigate();
   const timerRef = useRef(null);
-  const duration = 30000; // Defina a duração do temporizador em segundos
+  const duration = 30; // Defina a duração do temporizador em segundos
 
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
