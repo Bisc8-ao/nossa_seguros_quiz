@@ -17,15 +17,15 @@
 
 /* ============= Media Queries ============= */
 
-@media (width <= 1024px) {
+@media (max-width: 1024px) {
 }
 
-@media (width <= 820px) {
+@media (max-width: 820px) {
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
 }
-@media (width <= 430px) {
+@media (max-width: 430px) {
   ._mb_btn {
     padding: 1.4rem;
     border: 0.6rem solid $yellow-green;
@@ -35,7 +35,7 @@
   }
 }
 
-@media (width <= 414px) {
+@media (max-width: 414px) {
   ._mb_btn {
     padding: 1.4rem;
     border: 0.6rem solid $yellow-green;
@@ -45,7 +45,7 @@
   }
 }
 
-@media (width <= 375px) {
+@media (max-width: 375px) {
   ._mb_btn {
     padding: 1.4rem;
     border: 0.6rem solid $yellow-green;
@@ -55,7 +55,7 @@
   }
 }
 
-@media (width <= 320px) {
+@media (max-width: 320px) {
   ._mb_btn {
     padding: 1rem;
     border: 0.4rem solid $yellow-green;
