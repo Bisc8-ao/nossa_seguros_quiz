@@ -26,6 +26,13 @@
 @media (width <= 768px) {
 }
 @media (width <= 430px) {
+  ._mb_btn {
+    padding: 1.4rem;
+    border: 0.6rem solid $yellow-green;
+    span {
+      font-size: 2.6rem;
+    }
+  }
 }
 
 @media (width <= 414px) {

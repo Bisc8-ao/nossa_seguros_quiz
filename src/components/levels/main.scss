@@ -119,7 +119,17 @@
 
 }
 @media (width <= 430px) {
+  ._le_container {
+    gap: 3rem;
+  }
 
+  ._le_message {
+    font-size: 3.4rem;
+  }
+  ._le_buttons {
+    gap: 1rem;
+    padding: 0 2rem;
+  }
 }
 
 @media (width <= 414px) {

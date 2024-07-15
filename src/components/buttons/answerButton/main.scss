@@ -74,6 +74,13 @@
 @media (width <= 768px) {
 }
 @media (width <= 430px) {
+  ._tr_answer {
+    padding: 1.4rem 1.6rem;
+    border: 0.4rem solid $yellow-green;
+    p {
+      font-size: 1.8rem;
+    }
+  }
 }
 
 @media (width <= 414px) {
