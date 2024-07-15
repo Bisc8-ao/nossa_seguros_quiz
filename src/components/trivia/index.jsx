@@ -4,9 +4,9 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSound } from "use-sound";
 
-import Header from "../header/header";
-import Footer from "../footer/footer";
-import AnswerButton from "../buttons/answerButton";
+import Header from "../header/index";
+import Footer from "../footer/index";
+import AnswerButton from "../buttons/answerButton/index";
 
 import Levels from "../levels";
 import HorizontalTimer from "../horizontalTimer/index"; // Importa o temporizador circular

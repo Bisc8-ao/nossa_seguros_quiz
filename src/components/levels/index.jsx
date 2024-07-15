@@ -1,8 +1,8 @@
 import "./main.scss";
 
-import Header from "../header/header";
-import Footer from "../footer/footer";
-import MainButton from "../buttons/mainButton/mainButton";
+import Header from "../header/index";
+import Footer from "../footer/index";
+import MainButton from "../buttons/mainButton/index";
 
 import hole from "../../assets/svg/hole.svg";
 

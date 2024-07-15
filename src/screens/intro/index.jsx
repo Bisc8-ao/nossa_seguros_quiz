@@ -2,9 +2,9 @@ import "./main.scss";
 
 import { useNavigate } from "react-router-dom";
 
-import Header from "../../components/header/header";
-import Footer from "../../components/footer/footer"
-import MainButton from "../../components/buttons/mainButton/mainButton"
+import Header from "../../components/header/index";
+import Footer from "../../components/footer/index"
+import MainButton from "../../components/buttons/mainButton/index"
 
 import hole from "../../assets/svg/hole.svg";
 

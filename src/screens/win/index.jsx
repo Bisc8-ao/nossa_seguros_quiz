@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { useWindowSize } from "@react-hook/window-size";
 import Confetti from "react-confetti";
 
-import Header from "../../components/header/header";
-import Footer from "../../components/footer/footer"
-import MainButton from "../../components/buttons/mainButton/mainButton"
+import Header from "../../components/header/index";
+import Footer from "../../components/footer/index"
+import MainButton from "../../components/buttons/mainButton/index"
 
 import winLogo from "../../assets/svg/win.svg";
 

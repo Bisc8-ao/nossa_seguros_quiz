@@ -1,21 +1,17 @@
 import "./main.scss";
 
 import { useNavigate } from "react-router-dom";
-
-import { FaFacebookF } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { IoMdPlay } from "react-icons/io";
 
 import MainButton from "../../components/buttons/mainButton/index";
-
 import logo from "../../assets/images/NOSSA.png";
 
 function Home() {
   const navigate = useNavigate();
-  
+
   function handleClick() {
-      navigate("/intro");
+    navigate("/intro");
   }
 
   return (
@@ -23,7 +19,11 @@ function Home() {
       <div className="_hm_container">
         <img className="nossa_logo" src={logo} alt="" />
         <div className="_hm_btn_containers">
-          <MainButton text="Quero Jogar" handleClick={handleClick} transitionDelay={500}/>
+          <MainButton
+            text="Quero Jogar"
+            handleClick={handleClick}
+            transitionDelay={500}
+          />
           <div className="_hm_contact">+244 923 190 860</div>
           <div className="_hm_social">
             <ul>
