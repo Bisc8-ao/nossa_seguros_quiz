@@ -1,6 +1,6 @@
 ._hm_wrapper {
   min-height: 100vh;
-  padding: 10rem 5rem 3rem;
+  padding: 10rem $mr-xxl 3rem;
 
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@
   gap: 15rem;
 }
 
-.nossa_logo {
+._hm_nossa_logo {
   width: 90%;
   margin: auto;
 }
