@@ -65,3 +65,47 @@
     background: #E21726;
   }
 }
+
+
+/* ============= Media Queries ============= */
+
+@media (width <= 1024px) {
+}
+
+@media (width <= 820px) {
+}
+
+@media (width <= 768px) {
+}
+@media (width <= 430px) {
+}
+
+@media (width <= 414px) {
+    ._tr_answer {
+        padding: 1.4rem;
+        border: 0.6rem solid $yellow-green;
+        p {
+          font-size: 2.2rem;
+        }
+      }
+}
+
+@media (width <= 375px) {
+  ._tr_answer {
+    padding: 1.4rem;
+    border: 0.6rem solid $yellow-green;
+    p {
+      font-size: 2.2rem;
+    }
+  }
+}
+
+@media (width <= 320px) {
+  ._tr_answer {
+    padding: 1rem;
+    border: 0.4rem solid $yellow-green;
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}

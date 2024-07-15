@@ -36,5 +36,40 @@
 
 }
 
-
 /* ============= Media Queries ============= */
+
+@media (width <= 1024px) {
+
+}
+
+@media (width <= 820px) {
+
+}
+
+@media (width <= 768px) {
+
+}
+@media (width <= 430px) {
+
+}
+
+@media (width <= 414px) {
+  ._wn_container {
+    gap: 3rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (width <= 375px) {
+  ._wn_container {
+    gap: 3rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (width <= 320px) {
+  ._wn_container {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+}

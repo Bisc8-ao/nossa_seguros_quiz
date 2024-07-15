@@ -106,70 +106,47 @@
 }
 
 /* ============= Media Queries ============= */
-@media (max-width: 430px) {
-  ._le_container {
-    gap: $mr-xxl;
-  }
 
-  ._le_nossa_logo {
-    width: $logo-s;
-  }
+@media (width <= 1024px) {
 
-  ._le_list_container {
-    gap: $mr-s;
-  }
+}
 
-  ._le_item_list {
-    padding: $pd-s 0;
-    font-size: $font-btn-s;
+@media (width <= 820px) {
+
+}
+
+@media (width <= 768px) {
+
+}
+@media (width <= 430px) {
+
+}
+
+@media (width <= 414px) {
+  ._lo_container {
+    gap: 3rem;
+    padding: 0 1rem;
   }
 }
 
-@media (max-width: 414px) {
-  ._le_container {
-    gap: $mr-xxl;
-  }
-  ._le_nossa_logo {
-    width: $logo-xxs;
-  }
-
-  ._le_list_container {
-    gap: $mr-s;
-  }
-
-  ._le_item_list {
-    font-size: $font-btn-s;
+@media (width <= 375px) {
+  ._lo_container {
+    gap: 3rem;
+    padding: 0 1rem;
   }
 }
 
-@media (max-width: 375px) {
+@media (width <= 320px) {
+
   ._le_container {
-    gap: $mr-xl;
-  }
-  ._le_nossa_logo {
-    width: $logo-xxs;
+    gap: 2rem;
   }
 
-  ._le_list_container {
-    gap: $mr-s;
+  ._le_message {
+    font-size: 2.6rem;
   }
-
-  ._le_item_list {
-    padding: $pd-m 0;
-    font-size: $font-btn-xs;
-  }
-}
-
-@media (max-width: 320px) {
-  ._le_container {
-    gap: $mr-s;
-  }
-
-  ._le_nossa_logo {
-    width: $logo-xs;
-  }
-
-  ._le_list_container {
-    gap: $mr-xs;
+  ._le_buttons {
+    gap: 1rem;
+    padding: 0 2rem;
   }
 }

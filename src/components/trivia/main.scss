@@ -42,3 +42,52 @@
 
 /* ============= Media Queries ============= */
 
+@media (width <= 1024px) {
+
+}
+
+@media (width <= 820px) {
+
+}
+
+@media (width <= 768px) {
+
+}
+@media (width <= 430px) {
+
+}
+
+@media (width <= 414px) {
+
+}
+
+@media (width <= 375px) {
+
+}
+
+@media (width <= 320px) {
+
+  ._timer_container {
+    border-top: .4rem solid $yellow-green;
+    border-bottom: .4rem solid $yellow-green;
+  }
+
+  ._timer_container > div {
+    height: .8rem;
+  }
+
+  ._tr_display_container {
+    padding: 1.8rem;
+    border-bottom: .4rem solid $yellow-green;
+  }
+
+  ._tr_question {
+    font-size: 1.8rem;
+  }
+
+  ._tr_answers_container {
+    padding: 2rem;
+    gap: 1rem;
+  }
+}
+
