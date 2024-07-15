@@ -7,7 +7,46 @@
     display: flex;
 
     img {
-        width: 50rem;
+        width: 60%;
         margin: 0 auto;;
+    }
+}
+
+
+
+@media (width <= 1024px) {
+    
+}
+
+@media (width <= 820px) {
+
+}
+
+@media (width <= 768px) {
+
+}
+@media (width <= 430px) {
+
+}
+
+@media (width <= 414px) {
+    ._he_wrapper {
+        padding: 1.4rem 1rem;
+    }
+}
+
+@media (width <= 375px) {
+    ._he_wrapper {
+        padding: 1.4rem 1rem;
+    }
+}
+
+@media (width <= 320px) {
+    ._he_wrapper {
+        padding: 1rem 1rem;
+
+        img {
+            width: 50%;
+        }
     }
 }

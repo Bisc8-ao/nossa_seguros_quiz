@@ -1,55 +1,51 @@
 ._hm_wrapper {
   min-height: 100vh;
   padding: 10rem 5rem 3rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   background: url("../../assets/svg/background.svg") no-repeat;
   background-size: cover;
 }
 
-._hm_title {
-  color: #fff;
-  font-size: $font-title-s;
-  text-align: center;
-  display: block;
-}
-
 ._hm_container {
   width: 100%;
+
   display: inherit;
   flex-direction: column;
-  gap: 10rem;
+  gap: 15rem;
 }
 
 .nossa_logo {
-  width: 85%;
+  width: 90%;
   margin: auto;
 }
 
 ._hm_btn_containers {
   display: inherit;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin-top: $mr-m;
+  justify-content: space-between;
 
-  gap: 10rem;
+  gap: 8rem;
 }
 
 ._hm_contact {
-  background-color: $white;
   font-size: 6rem;
   font-weight: 900;
   text-align: center;
+  color: $indigo-dye;
+
+  background-color: $white;
+  
   display: inline-block;
+  position: relative;
 
   padding: 3rem 5rem;
-
-  border-radius: 50rem;
   margin: 0 auto;
-  color: $indigo-dye;
-  position: relative;
+  border-radius: 50rem;
 }
 
 ._hm_contact::before {
@@ -67,8 +63,6 @@
   bottom: -1.5rem;
   transform: translateX(-50%);
 }
-
-
 
 ._hm_social, 
 ._hm_social ul {
@@ -102,3 +96,132 @@
 }
 
 /* ============= Media Queries ============= */
+
+@media (width <= 414px) {
+
+  ._hm_wrapper {
+    padding: 2rem 1rem 2rem;
+  }
+
+  .nossa_logo {
+    width: 60%;
+  }
+
+  ._hm_btn_containers {
+    gap: 2rem;
+  }
+
+  ._hm_contact {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+
+  ._hm_contact::before {
+    height: 1rem;
+    bottom: -0.5rem;
+  }
+
+  ._hm_container {
+    gap: 2rem;
+  }
+
+  ._hm_social_icon {
+    font-size: 2rem;
+    padding: .6rem;
+  }
+
+  ._hm_social ul {
+    gap: 1rem;
+  }
+  
+  ._hm_link {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+}
+
+@media (width <= 375px) {
+
+  ._hm_wrapper {
+    padding: 2rem 1rem 2rem;
+  }
+
+  .nossa_logo {
+    width: 60%;
+  }
+
+  ._hm_btn_containers {
+    gap: 2rem;
+  }
+
+  ._hm_contact {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+
+  ._hm_contact::before {
+    height: 1rem;
+    bottom: -0.5rem;
+  }
+
+  ._hm_container {
+    gap: 2rem;
+  }
+
+  ._hm_social_icon {
+    font-size: 2rem;
+    padding: .6rem;
+  }
+
+  ._hm_social ul {
+    gap: 1rem;
+  }
+  
+  ._hm_link {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+}
+
+@media (width <= 320px) {
+
+  ._hm_wrapper {
+    padding: 2rem 1rem 2rem;
+  }
+
+  .nossa_logo {
+    width: 60%;
+  }
+
+  ._hm_btn_containers {
+    gap: 2rem;
+  }
+
+  ._hm_contact {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+
+  ._hm_contact::before {
+    height: 1rem;
+    bottom: -0.5rem;
+  }
+
+  ._hm_container {
+    gap: 2rem;
+  }
+
+  ._hm_social_icon {
+    font-size: 2rem;
+    padding: .6rem;
+  }
+
+  ._hm_social ul {
+    gap: 1rem;
+  }
+  
+  ._hm_link {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+}

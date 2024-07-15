@@ -1,15 +1,16 @@
 ._wn_wrapper {
   min-height: 100vh;
+
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+
   background: url("../../assets/svg/background.svg") no-repeat;
   background-size: cover;
 }
 
 ._wn_title {
   color: #fff;
-  font-size: $font-title-l;
+  font-size: $font-title-s;
   text-align: center;
   display: block;
 }
@@ -18,94 +19,57 @@
   width: 100%;
   display: inherit;
   flex-direction: column;
-  gap: $mr-m;
+  gap: 10rem;
+
+  margin: auto 0;
 }
 
 ._wn_nossa_logo {
-  display: inline-block;
-  align-self: center;
-  width: $logo-xs;
+  width: 90%;
+  margin: 0 auto;
 }
 
 ._wn_btn_containers {
   display: inherit;
-  flex-direction: inherit;
-  gap: $mr-s;
-}
+  justify-content: center;
+  margin-top: $mr-m;
 
-.player {
-  width: $logo-s;
-  height: $logo-s;
-}
-
-._wn_restart {
-  font-size: $font-btn-xl;
-  width: 70%;
-  margin: auto;
-  
-  padding: $mr-s;
-
-  border-radius: $bdr-s;
-  border: $bd-s solid $white;
-
-  background-color: $yellow-green;
-  color: $indigo-dye;
 }
 
 /* ============= Media Queries ============= */
 
+@media (width <= 1024px) {
+
+}
+
+@media (width <= 820px) {
+
+}
+
+@media (width <= 768px) {
+
+}
 @media (width <= 430px) {
-  ._wn_nossa_logo {
-    width: $logo-m;
-  }
 
-  .player {
-    width: $logo-m;
-    height: $logo-m;
-  }
+}
 
-  ._wn_title {
-    font-size: $font-title-xxl;
-  }
-  ._wn_restart {
-    font-size: $font-btn-m;
+@media (width <= 414px) {
+  ._wn_container {
+    gap: 3rem;
+    padding: 0 1rem;
   }
 }
 
 @media (width <= 375px) {
-  ._wn_nossa_logo {
-    width: $logo-s;
-  }
-
-  .player {
-    width: $logo-m;
-    height: $logo-m;
-  }
-
-  ._wn_title {
-    font-size: $font-title-xxl;
-  }
-  ._wn_restart {
-    font-size: $font-btn-m;
+  ._wn_container {
+    gap: 3rem;
+    padding: 0 1rem;
   }
 }
 
 @media (width <= 320px) {
-
-  ._wn_nossa_logo {
-    width: $logo-s;
-  }
-
-  ._wn_title {
-    font-size: $font-title-m;
-  }
-
-  .player {
-    width: $logo-s;
-    height: $logo-s;
-  }
-
-  ._wn_restart {
-    font-size: $font-btn-s;
+  ._wn_container {
+    gap: 1rem;
+    padding: 0 1rem;
   }
 }
