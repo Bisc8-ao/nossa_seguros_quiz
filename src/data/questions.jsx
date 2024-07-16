@@ -3,10 +3,10 @@ const questions = [
     id: 1,
     question: "Para que serve um seguro?",
     answers: [
-      { text: "proteger financeiramente as pessoas ou empresas de imprevistos que possam causar diversos danos", correct: true },
-      { text: "andar seguro nas ruas e estar livre de ataques das pessoas más.", correct: false },
-      { text: "ajudar a polícia a acabar com a delinquência juvenil", correct: false },
-      { text: "causar danos propositalmente às pessoas e ter sempre como me defender.", correct: false },
+      { text: "Serve para proteger financeiramente as pessoas ou empresas de imprevistos que possam causar diversos danos.", correct: true },
+      { text: "Serve para andar seguro nas ruas e estar livre de ataques das pessoas más.", correct: false },
+      { text: "Serve para ajudar a polícia a acabar com a delinquência juvenil.", correct: false },
+      { text: "Serve para causar danos propositalmente às pessoas e ter sempre como me defender.", correct: false },
     ],
   },
   {
@@ -14,9 +14,9 @@ const questions = [
     question: "O que é uma Apólice de seguro?",
     answers: [
       { text: "Documento que comprova a contratação de um seguro.", correct: true },
-      { text: "Documento que impede alguém de viajar, quando não tem um seguro.", correct: false },
-      { text: "Documento que me ajuda a tirar um visto para uma viagem para Portugal.", correct: false },
       { text: "Documento que a Polícia entrega quando alguém é assaltado.", correct: false },
+      { text: "Documento que me ajuda a tirar um visto para uma viagem para Portugal.", correct: false },
+      { text: "Documento que impede alguém de viajar, quando não tem um seguro.", correct: false },
     ],
   },
   {
@@ -44,8 +44,8 @@ const questions = [
     question: "Em que ano foi fundada a NOSSA?",
     answers: [
       { text: "2002", correct: false },
-      { text: "2004", correct: true },
-      { text: "2005", correct: false },
+      { text: "2004", correct: false },
+      { text: "2005", correct: true },
       { text: "2012", correct: false }
     ],
   },
@@ -53,9 +53,9 @@ const questions = [
     id: 6,
     question: "Em que províncias se encontra a NOSSA?",
     answers: [
-      { text: "Todas as províncias", correct: true },
+      { text: "Todas as províncias", correct: false },
       { text: "Em 10", correct: false },
-      { text: "Em 16", correct: false },
+      { text: "Em 16", correct: true },
       { text: "Em 7", correct: false },
     ],
   },
@@ -74,9 +74,9 @@ const questions = [
     question: "Quantos anos de existência tem a NOSSA?",
     answers: [
       { text: "5 Anos", correct: false },
-      { text: "88 Anos", correct: false },
+      { text: "18 Anos", correct: false },
       { text: "47 Anos", correct: false },
-      { text: "18 Anos", correct: true },
+      { text: "19 Anos", correct: true },
     ],
   },
   {
@@ -93,9 +93,9 @@ const questions = [
     id: 10,
     question: "Qual é o slogan da NOSSA?",
     answers: [
-      { text: "Seguros de Angola.", correct: true },
+      { text: "Seguros de Angola.", correct: false },
       { text: "Por uma vida mais leve.", correct: false },
-      { text: "NOSSA Seguros, protege o que é nosso.", correct: false },
+      { text: "NOSSA Seguros, protege o que é nosso.", correct: true },
       { text: "NOSSA Seguros, Angola merece a nossa protecção.", correct: false },
     ],
   },
