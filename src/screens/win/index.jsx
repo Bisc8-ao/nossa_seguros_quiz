@@ -16,7 +16,13 @@ function Win() {
 
   function handleClick() {
       navigate('/')
+      window.location.reload()
   }
+
+  setTimeout(() => {
+    navigate('/home')
+    window.location.reload()
+  }, 20000)
 
   return (
     <div className="_wn_wrapper">
