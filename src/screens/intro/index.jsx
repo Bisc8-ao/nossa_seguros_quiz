@@ -19,8 +19,12 @@ function Intro() {
     <div className="_in_wrapper">
       <Header />
       <div className="_in_container">
-        <img className="_in_nossa_logo" src={hole} alt="" />
-
+      <div className="_le_hole_container">
+          <img className="_le_nossa_logo" src={hole} alt="Logo" />
+          <p className="_le_message">
+            Lorem Ipsum Dolor Sit Amet
+          </p>
+        </div>
         <div className="_in_btn_containers">
           <MainButton text="Continuar" handleClick={handleClick} transitionDelay={500}/>
         </div>
