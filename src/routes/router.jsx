@@ -12,7 +12,7 @@ const Router = () => {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Splash />} />
+      <Route index path="/" element={<Splash />} />
       <Route path="/home" element={<Home />} />
       <Route path="/intro" element={<Intro />} />
       <Route path="/quiz" element={<Quiz />} />

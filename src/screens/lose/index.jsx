@@ -12,11 +12,12 @@ function Lose() {
   const navigate = useNavigate();
 
   setTimeout(() => {
-    navigate('/home')
+    navigate('/')
+    window.location.reload()
   }, 10000)
 
   function handleClick() {
-      navigate('/home')
+      navigate('/')
       window.location.reload()
   }
 
