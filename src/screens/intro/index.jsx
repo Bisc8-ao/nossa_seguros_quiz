@@ -22,7 +22,7 @@ function Intro() {
       <div className="_le_hole_container">
           <img className="_le_nossa_logo" src={hole} alt="Logo" />
           <p className="_le_message">
-            Lorem Ipsum Dolor Sit Amet
+            Responda as perguntas e ganhe prémios com a NOSSA.
           </p>
         </div>
         <div className="_in_btn_containers">
