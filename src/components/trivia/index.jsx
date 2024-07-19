@@ -18,12 +18,13 @@ import wrong from "../../assets/sounds/wrong.mp3";
 function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   const navigate = useNavigate();
   const timerRef = useRef(null);
-  const duration = 30; // Defina a duração do temporizador em segundos
+  const duration = 30; // Defina a duração do temporizador em milissegundos
 
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
+  const [correctAnswer, setCorrectAnswer] = useState(null);
   const [showLevel, setShowLevel] = useState(false);
-  const [className, setClassName] = useState("_tr_answer");
   const [isBlocked, setIsBlocked] = useState(false);
 
   const [letsPlay, { stop: stopLetsPlay }] = useSound(play, { loop: true });
@@ -36,7 +37,11 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   }, [letsPlay, stopLetsPlay]);
 
   useEffect(() => {
-    setQuestion(data[questionNumber - 1]);
+    const currentQuestion = data[questionNumber - 1];
+    setQuestion(currentQuestion);
+    setCorrectAnswer(currentQuestion.answers.find(ans => ans.correct));
+    setShowCorrectAnswer(false);
+    setSelectedAnswer(null);
     if (timerRef.current) {
       timerRef.current.startTimer();
     }
@@ -48,11 +53,7 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
     setStop(true);
   };
 
-  const delay = (duration, callback) => {
-    setTimeout(() => {
-      callback();
-    }, duration);
-  };
+  const delay = (duration) => new Promise(resolve => setTimeout(resolve, duration));
 
   const handleContinue = () => {
     setShowLevel(false);
@@ -81,7 +82,7 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
     }
   }
 
-  function handleClick(answer) {
+  async function handleClick(answer) {
     if (isBlocked) return;
 
     if (timerRef.current) {
@@ -90,48 +91,38 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
 
     setIsBlocked(true);
     setSelectedAnswer(answer);
-    setClassName("_tr_answer active");
 
-    delay(3000, () =>
-      setClassName(
-        answer.correct ? "_tr_answer _tr_correct" : "_tr_answer _tr_wrong"
-      )
-    );
+    await delay(3000);
+    if (answer.correct) {
+      setShowCorrectAnswer(true);
+      correctAnswerSound();
+    } else {
+      setShowCorrectAnswer(true);
+      wrongAnswerSound();
+    }
 
-    delay(6000, () => {
-      if (answer.correct) {
-        if (questionNumber === data.length) {
-          correctAnswerSound();
-          stopLetsPlay();
-          navigate("/win", { state: { message: "Você venceu o Jogo" } });
-          setStop(true);
-          setIsBlocked(false);
-          setClassName("");
-        } else {
-          correctAnswerSound();
-          delay(3000, () => {
-            setSelectedAnswer(null);
-            setIsBlocked(false);
-
-            // Mostrar o nível a cada mudança de nível
-            if (questionNumber === 4 || questionNumber === 8) {
-              setShowLevel(true);
-            } else {
-              setQuestionNumber((prev) => prev + 1);
-              if (timerRef.current) {
-                timerRef.current.startTimer();
-              }
-            }
-          });
-        }
-      } else {
-        wrongAnswerSound();
+    await delay(3000);
+    if (answer.correct) {
+      if (questionNumber === data.length) {
         stopLetsPlay();
-        setSelectedAnswer(null);
-        navigate("/lose");
+        navigate("/win", { state: { message: "Você venceu o Jogo" } });
         setStop(true);
+      } else {
+        if (questionNumber === 4 || questionNumber === 8) {
+          setShowLevel(true);
+        } else {
+          setQuestionNumber((prev) => prev + 1);
+          if (timerRef.current) {
+            timerRef.current.startTimer();
+          }
+        }
       }
-    });
+    } else {
+      stopLetsPlay();
+      navigate("/lose");
+      setStop(true);
+    }
+    setIsBlocked(false);
   }
 
   return (
@@ -158,13 +149,14 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
             </div>
           </div>
           <div className="_tr_answers_container">
-            {question?.answers.map((answer, index) => (
+            {question?.answers?.map((answer, index) => (
               <AnswerButton
+                key={index}
                 answer={answer}
                 handleClick={handleClick}
-                key={index}
                 selectedAnswer={selectedAnswer}
-                className={className}
+                showCorrectAnswer={showCorrectAnswer}
+                correctAnswer={correctAnswer}
               />
             ))}
           </div>

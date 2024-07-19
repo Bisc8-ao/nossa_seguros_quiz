@@ -19,6 +19,11 @@ function Win() {
       window.location.reload();
   }
 
+  setTimeout(() => {
+    navigate('/')
+    window.location.reload()
+  }, 20000)
+
   return (
     <div className="_wn_wrapper">
       <Confetti width={width} height={height} />

@@ -11,6 +11,11 @@ import loseLogo from "../../assets/svg/lose.svg";
 function Lose() {
   const navigate = useNavigate();
 
+  setTimeout(() => {
+    navigate('/')
+    window.location.reload()
+  }, 10000)
+
   function handleClick() {
       navigate('/')
       window.location.reload()
