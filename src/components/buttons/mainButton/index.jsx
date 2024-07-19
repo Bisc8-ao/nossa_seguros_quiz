@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 function MainButton({ text, handleClick, transitionDelay }) {
 
-console.log(!transitionDelay)
   return (
     <motion.button
       whileTap={{ scale: 0.85 }}
