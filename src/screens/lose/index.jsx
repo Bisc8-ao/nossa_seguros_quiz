@@ -13,7 +13,6 @@ function Lose() {
 
   setTimeout(() => {
     navigate('/home')
-    window.location.reload()
   }, 10000)
 
   function handleClick() {
