@@ -18,13 +18,13 @@ import wrong from "../../assets/sounds/wrong.mp3";
 function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   const navigate = useNavigate();
   const timerRef = useRef(null);
-  const duration = 30; // Defina a duração do temporizador em milissegundos
+  const duration = 30; // Defina a duração do temporizador em segundos
 
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
   const [correctAnswer, setCorrectAnswer] = useState(null);
   const [showLevel, setShowLevel] = useState(false);
+  const [className, setClassName] = useState("_tr_answer");
   const [isBlocked, setIsBlocked] = useState(false);
 
   const [letsPlay, { stop: stopLetsPlay }] = useSound(play, { loop: true });
@@ -40,8 +40,6 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
     const currentQuestion = data[questionNumber - 1];
     setQuestion(currentQuestion);
     setCorrectAnswer(currentQuestion.answers.find(ans => ans.correct));
-    setShowCorrectAnswer(false);
-    setSelectedAnswer(null);
     if (timerRef.current) {
       timerRef.current.startTimer();
     }
@@ -91,18 +89,18 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
 
     setIsBlocked(true);
     setSelectedAnswer(answer);
+    setClassName("_tr_answer active");
 
     await delay(3000);
     if (answer.correct) {
-      setShowCorrectAnswer(true);
-      correctAnswerSound();
+      setClassName("_tr_answer _tr_correct");
     } else {
-      setShowCorrectAnswer(true);
-      wrongAnswerSound();
+      setClassName("_tr_answer _tr_wrong");
     }
 
     await delay(3000);
     if (answer.correct) {
+      correctAnswerSound();
       if (questionNumber === data.length) {
         stopLetsPlay();
         navigate("/win", { state: { message: "Você venceu o Jogo" } });
@@ -118,11 +116,14 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
         }
       }
     } else {
+      // Resposta Errada
+      wrongAnswerSound();
       stopLetsPlay();
       navigate("/lose");
       setStop(true);
     }
     setIsBlocked(false);
+    setClassName("");
   }
 
   return (
@@ -155,8 +156,12 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
                 answer={answer}
                 handleClick={handleClick}
                 selectedAnswer={selectedAnswer}
-                showCorrectAnswer={showCorrectAnswer}
-                correctAnswer={correctAnswer}
+                className={selectedAnswer === answer 
+                  ? className 
+                  : (correctAnswer === answer 
+                    ? "_tr_answer _tr_correct" 
+                    : "_tr_answer")}
+                transitionDelay={300}
               />
             ))}
           </div>

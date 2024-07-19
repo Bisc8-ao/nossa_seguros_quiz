@@ -1,28 +1,23 @@
-import "./main.scss";
+import "./main.scss"
 import { motion } from "framer-motion";
 
-function AnswerButton({ answer, handleClick, selectedAnswer, showCorrectAnswer, correctAnswer, transitionDelay = 0 }) {
-  const isSelected = selectedAnswer === answer;
-  const isCorrect = correctAnswer === answer;
-  const buttonClassName = isSelected
-    ? (isCorrect ? "_tr_answer _tr_correct" : "_tr_answer _tr_wrong")
-    : (showCorrectAnswer && isCorrect ? "_tr_answer _tr_correct" : "_tr_answer");
+function AnswerButton({ answer, handleClick, selectedAnswer, className, transitionDelay }) {
 
-  const handleAnswerClick = () => {
-    setTimeout(() => {
-      handleClick(answer);
-    }, transitionDelay);
-  };
-
-  return (
-    <motion.div
-      whileTap={{ scale: 0.85 }}
-      className={buttonClassName}
-      onClick={handleAnswerClick}
-    >
-      <p>{answer.text}</p>
-    </motion.div>
-  );
+    return (
+        <div>
+            <motion.div
+                whileTap={{ scale: 0.85 }}
+                className={selectedAnswer === answer ? className : "_tr_answer"}
+                onClick={() => {
+                  setTimeout(() => {
+                    handleClick(answer)
+                  }, !transitionDelay ? 0 : transitionDelay)
+                }}
+              >
+                <p>{answer.text}</p>
+              </motion.div>
+        </div>
+    )
 }
 
 export default AnswerButton;
