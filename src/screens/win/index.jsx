@@ -20,7 +20,7 @@ function Win() {
   }
 
   setTimeout(() => {
-    navigate('/home')
+    navigate('/')
     window.location.reload()
   }, 20000)
 
