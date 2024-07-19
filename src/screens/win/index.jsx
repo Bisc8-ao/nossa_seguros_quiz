@@ -16,7 +16,7 @@ function Win() {
 
   function handleClick() {
       navigate('/')
-      window.location.reload()
+      window.location.reload();
   }
 
   setTimeout(() => {
