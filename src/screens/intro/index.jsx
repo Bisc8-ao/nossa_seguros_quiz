@@ -11,11 +11,6 @@ import hole from "../../assets/svg/hole.svg";
 function Intro() {
   const navigate = useNavigate();
 
-  setTimeout(() => {
-    navigate('/')
-    window.location.reload()
-  }, 10000)
-
   function handleClick() {
       navigate('/quiz')
   }
