@@ -3,7 +3,7 @@ const questions = [
     id: 1,
     question: "Para que serve um seguro?",
     answers: [
-      { text: "Serve para proteger financeiramente as pessoas ou empresas de imprevistos que possam causar diversos danos.", correct: true },
+      { text: "Serve para proteger financeiramente as pessoas ou empresas de imprevistos que possam causar diversos danos", correct: true },
       { text: "Serve para andar seguro nas ruas e estar livre de ataques das pessoas más.", correct: false },
       { text: "Serve para ajudar a polícia a acabar com a delinquência juvenil.", correct: false },
       { text: "Serve para causar danos propositalmente às pessoas e ter sempre como me defender.", correct: false },
