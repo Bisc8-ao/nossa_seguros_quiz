@@ -9,7 +9,7 @@ import logo from "../../assets/images/NOSSA.png";
 
 function Home() {
   const navigate = useNavigate();
-
+  
   function handleClick() {
     navigate("/intro");
   }
