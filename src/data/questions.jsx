@@ -74,7 +74,7 @@ const questions = [
     question: "Quantos anos de existência tem a NOSSA?",
     answers: [
       { text: "5 anos.", correct: false },
-      { text: "18 anos.", correct: true },
+      { text: "19 anos.", correct: true },
       { text: "47 anos.", correct: false },
       { text: "19 anos.", correct: false },
     ],
